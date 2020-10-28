@@ -6,9 +6,9 @@
     <div class="container">
         {% for post in posts %}
             <div class="card mt-2">
-                <div class="card-header">{{ ('app.ui.'~post.language)|trans }}</div>
+                <div class="card-header">{{ post.user.username }} a partagé cette publication <span class="badge badge-success">{{ ('app.ui.'~post.language)|trans }}</span></div>
                 <div class="card-body">
-                    <h5 class="card-title">{{ post.user.username }}</h5>
+                    <h5 class="card-title">Le titre du post</h5>
                     <p class="card-text">{{ post.content }}</p>
                     <a href="" class="btn btn-primary">{{ 'app.ui.read_more'|trans }}</a>
                 </div>
