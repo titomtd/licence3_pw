@@ -1,0 +1,16 @@
+app:
+  ui:
+    add_new_post: Add new post
+    confirm_password: Confirm password
+    content: Content
+    email: Mail adress
+    home: Home
+    language: Language
+    login: Login
+    logout: Logout
+    my_account: My account
+    password: Password
+    post: Post
+    publish: Publish
+    register: Register
+    username: Username

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PostController!{% endblock %}
+
+{% block body %}
+<div class="container mt-2">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header">{{ 'app.ui.add_new_post'|trans }}</div>
+                <div class="card-body">
+                    {{ form_start(form)}}
+                    <div class="form-group">
+                        {{ form_label(form.language, ('app.ui.language'|trans)) }}
+                        {{ form_errors(form.language) }}
+                        {{ form_widget(form.language, {'attr': {'class': 'form-control', 'placeholder': ('app.ui.language'|trans)}}) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(form.content, ('app.ui.content'|trans)) }}
+                        {{ form_errors(form.content) }}
+                        {{ form_widget(form.content, {'attr': {'class': 'form-control', 'placeholder': ('app.ui.content'|trans)}}) }}
+                    </div>
+                    <button type="submit" class="btn btn-success">{{ 'app.ui.publish'|trans }}</button>
+                    {{ form_end(form)}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

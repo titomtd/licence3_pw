@@ -1,0 +1,16 @@
+app:
+  ui:
+    add_new_post: Ajouter une nouvelle publication
+    confirm_password: Confirmez le mot de passe
+    content: Contenu
+    email: Adresse mail
+    home: Accueil
+    language: Langage
+    login: Connexion
+    logout: Déconnexion
+    my_account: Mon compte
+    password: Mot de passe
+    post: Publications
+    publish: Publier
+    resgiter: Inscription
+    username: Nom d'utilisateur
