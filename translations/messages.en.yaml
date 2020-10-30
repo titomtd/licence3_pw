@@ -1,6 +1,8 @@
 app:
   ui:
     add_new_post: Add new post
+    by: by
+    comment: Comment
     confirm_password: Confirm password
     content: Content
     email: Mail adress
@@ -8,6 +10,7 @@ app:
     home: Home
     java: Java
     language: Language
+    leave_a_comment: Leave a comment
     login: Login
     logout: Logout
     my_account: My account
@@ -16,6 +19,7 @@ app:
     password: Password
     php: PHP
     post: Post
+    post_rating: Post rating
     publish: Publish
     python: Python
     read_more: Read more
