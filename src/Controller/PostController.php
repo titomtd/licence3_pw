@@ -38,6 +38,19 @@ class PostController extends AbstractController
     }
 
     /**
+     * @Route("/post/show/{id}", name="post_show")
+     */
+    public function changeLocale(Post $post, UserRepository $userRepository)
+    {
+        $users = $userRepository->findAll();
+
+        return $this->render('post/show.html.twig', [
+            'post' => $post,
+            'users' => $users,
+        ]);
+    }
+
+    /**
      * @Route("/post/create", name="post_create")
      */
     public function create(Request $request, ObjectManager $manager, ?UserInterface $user): Response

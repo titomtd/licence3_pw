@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+            <ol class="breadcrumb my-4">
+                <li class="breadcrumb-item"><a href="{{ path('home') }}">{{ 'app.ui.home'|trans }}</a></li>
+                <li class="breadcrumb-item active">{{ post.title }}</li>
+            </ol>
+            <h1><span class="badge badge-info">{{ ('app.ui.'~post.language)|trans }}</span> {{ post.title }}</h1>
+            <p class="lead">
+                {{ 'app.ui.by'|trans }}
+                <a href="#">{{ post.user.username }}</a>
+            </p>
+            <hr>
+            <p>{{ post.createdAt | date }}</p>
+            <hr>
+            <div>
+                {{ post.content|raw }}
+            </div>
+            <hr>
+            <div class="card my-4">
+                <h5 class="card-header">{{ 'app.ui.leave_a_comment'|trans }}</h5>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">{{ 'app.ui.comment'|trans }}</button>
+                    </form>
+                </div>
+            </div>
+            <div class="media mb-4">
+                <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+                <div class="media-body">
+                    <h5 class="mt-0">Commenter Name</h5>
+                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="row">
+                <div class="col-md-6 col-lg-12">
+                    <div class="rating-block my-4">
+                        <h4>{{ 'app.ui.post_rating'|trans }}</h4>
+                        <h2 class="bold padding-bottom-7">{{ post.score }} <small>/ 5</small></h2>
+                        <div class="form-group">
+                            <input type="range" class="form-control-range" id="formControlRange">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-12">
+                    <div class="card my-4">
+                        <div class="card-header">{{ 'app.ui.new_users'|trans }}</div>
+                        <ul class="list-group list-group-flush">
+                            {% for user in users %}
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <h5 class="card-title">{{ user.username }}</h5>
+                                            <p class="card-text">{{ 'app.ui.number_post'|trans({'%number%': user.getPostNumber}) }}</p>
+                                        </div>
+                                        <div class="col-4">
+                                            <a href="" class="btn btn-link btn-sm">{{ 'app.ui.view_profile'|trans }}</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    pre {
+        background-color: rgb(245, 246, 250);
+        padding: 7px;
+        border-radius: 5px;
+    }
+    .rating-block{
+        background-color:#FAFAFA;
+        border:1px solid #EFEFEF;
+        padding:15px 15px 20px 15px;
+        border-radius:3px;
+    }
+</style>
+{% endblock %}

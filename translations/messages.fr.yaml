@@ -1,6 +1,8 @@
 app:
   ui:
     add_new_post: Ajouter une nouvelle publication
+    by: par
+    comment: Commenter
     confirm_password: Confirmez le mot de passe
     content: Contenu
     email: Adresse mail
@@ -8,6 +10,7 @@ app:
     home: Accueil
     java: Java
     language: Langage
+    leave_a_comment: Laisser un commentaire
     login: Connexion
     logout: Déconnexion
     my_account: Mon compte
@@ -16,6 +19,7 @@ app:
     password: Mot de passe
     php: PHP
     post: Publications
+    post_rating: Score de la publication
     publish: Publier
     python: Python
     read_more: Lire la suite
