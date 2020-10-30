@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Post;
 use App\Languages;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -16,7 +17,19 @@ class PostFormType extends AbstractType
     {
         $builder
             ->add('title')
-            ->add('content', TextareaType::class)
+            ->add('content', CKEditorType::class, [
+                'config' => [
+                    'toolbar' => 'my_toolbar_1',
+                    'required' => 'true',
+                    'extraPlugins' => 'codesnippet',
+                ],
+                'plugins' => [
+                    'codesnippet' => [
+                        'path' => '/bundles/fosckeditor/plugins/codesnippet/',
+                        'filename' => 'plugin.js',
+                    ],
+                ],
+            ])
             ->add('language', ChoiceType::class, [
                 'choices' => [
                     'Java' => Languages::JAVA,
