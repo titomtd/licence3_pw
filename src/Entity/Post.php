@@ -28,6 +28,11 @@ class Post
     private $score;
 
     /**
+     * @ORM\Column(type="string")
+     */
+    private $title;
+
+    /**
      * @ORM\Column(type="text")
      */
     private $content;
@@ -68,6 +73,18 @@ class Post
     public function setScore(int $score): self
     {
         $this->score = $score;
+
+        return $this;
+    }
+
+    public function getTitle(): ?string
+    {
+        return $this->title;
+    }
+
+    public function setTitle(string $title): self
+    {
+        $this->title = $title;
 
         return $this;
     }

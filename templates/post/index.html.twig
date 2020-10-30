@@ -3,16 +3,73 @@
 {% block title %}Hello PostController!{% endblock %}
 
 {% block body %}
-    <div class="container">
-        {% for post in posts %}
+<div class="container">
+    <div class="row">
+        <div class="col">
             <div class="card mt-2">
-                <div class="card-header">{{ post.user.username }} a partagé cette publication <span class="badge badge-success">{{ ('app.ui.'~post.language)|trans }}</span></div>
-                <div class="card-body">
-                    <h5 class="card-title">Le titre du post</h5>
-                    <p class="card-text">{{ post.content }}</p>
-                    <a href="" class="btn btn-primary">{{ 'app.ui.read_more'|trans }}</a>
+                <div class="card-header">
+                    {{ 'app.ui.filter_by_language'|trans }}
                 </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <a class="btn btn-link">{{ 'app.ui.java'|trans }}</a>
+                        <span class="badge badge-primary badge-pill">{{ nb_java }}</span>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="btn btn-link">{{ 'app.ui.python'|trans }}</a>
+                        <span class="badge badge-primary badge-pill">{{ nb_python }}</span>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="btn btn-link">{{ 'app.ui.php'|trans }}</a>
+                        <span class="badge badge-primary badge-pill">{{ nb_php }}</span>
+                    </li>
+                </ul>
             </div>
-        {% endfor %}
+            <a href="{{ path('post_create') }}" class="btn btn-info mt-2">{{ 'app.ui.publish'|trans }}</a>
+        </div>
+        <div class="col-7">
+            {% for post in posts %}
+                <div class="card mt-2">
+                    <div class="card-header"><span class="badge badge-info">{{ ('app.ui.'~post.language)|trans }}</span> <a href="" class="btn-link">{{ 'app.ui.shared_this_post'|trans({'%name%': post.user.username}) }}</a></div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{ post.title }}</h5>
+                        <p class="card-text">
+                            <figure>
+                        <pre>
+                            <code  class="language-{{ post.language }}">
+                              {{ post.content }}
+                            </code>
+                        </pre>
+                            </figure>
+                        </p>
+                        <a href="" class="btn btn-info">{{ 'app.ui.read_more'|trans }}</a>
+                    </div>
+                    <div class="card-footer text-muted">
+                        {{ post.createdAt|date }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="col">
+            <div class="card mt-2">
+                <div class="card-header">{{ 'app.ui.new_users'|trans }}</div>
+                <ul class="list-group list-group-flush">
+                    {% for user in users %}
+                        <li class="list-group-item">
+                            <div class="row">
+                                <div class="col-8">
+                                    <h5 class="card-title">{{ user.username }}</h5>
+                                    <p class="card-text">{{ 'app.ui.number_post'|trans({'%number%': user.getPostNumber}) }}</p>
+                                </div>
+                                <div class="col-4">
+                                    <a href="" class="btn btn-link btn-sm">{{ 'app.ui.view_profile'|trans }}</a>
+                                </div>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
     </div>
+</div>
 {% endblock %}

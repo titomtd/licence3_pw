@@ -4,13 +4,23 @@ app:
     confirm_password: Confirm password
     content: Content
     email: Mail adress
+    filter_by_language: Filter by language
     home: Home
+    java: Java
     language: Language
     login: Login
     logout: Logout
     my_account: My account
+    new_users: New users
+    number_post: '%number% post(s)'
     password: Password
+    php: PHP
     post: Post
     publish: Publish
+    python: Python
+    read_more: Read more
     register: Register
+    shared_this_post: '%name% shared this post'
+    title: Title
     username: Username
+    view_profile: View profile

@@ -153,4 +153,9 @@ class User implements UserInterface
 
         return $this;
     }
+
+    public function getPostNumber(): ?int
+    {
+        return $this->posts->count();
+    }
 }

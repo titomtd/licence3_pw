@@ -4,13 +4,23 @@ app:
     confirm_password: Confirmez le mot de passe
     content: Contenu
     email: Adresse mail
+    filter_by_language: Filtrer par langage
     home: Accueil
+    java: Java
     language: Langage
     login: Connexion
     logout: Déconnexion
     my_account: Mon compte
+    new_users: Nouveaux utilisateurs
+    number_post: '%number% publication(s)'
     password: Mot de passe
+    php: PHP
     post: Publications
     publish: Publier
+    python: Python
+    read_more: Lire la suite
     resgiter: Inscription
+    shared_this_post: '%name% a partagé cette publication'
+    title: Titre
     username: Nom d'utilisateur
+    view_profile: Voir le profil
