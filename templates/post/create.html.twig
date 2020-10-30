@@ -11,6 +11,11 @@
                 <div class="card-body">
                     {{ form_start(form)}}
                     <div class="form-group">
+                        {{ form_label(form.title, ('app.ui.title'|trans)) }}
+                        {{ form_errors(form.title) }}
+                        {{ form_widget(form.title, {'attr': {'class': 'form-control', 'placeholder': ('app.ui.title'|trans)}}) }}
+                    </div>
+                    <div class="form-group">
                         {{ form_label(form.language, ('app.ui.language'|trans)) }}
                         {{ form_errors(form.language) }}
                         {{ form_widget(form.language, {'attr': {'class': 'form-control', 'placeholder': ('app.ui.language'|trans)}}) }}
