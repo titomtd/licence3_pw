@@ -2,6 +2,7 @@ app:
   ui:
     add_new_post: Add new post
     by: by
+    close: Close
     comment: Comment
     confirm_password: Confirm password
     content: Content
@@ -20,6 +21,7 @@ app:
     password: Password
     php: PHP
     please_connect_to_leave_a_comment: Please login to be able to leave a comment
+    please_connect_to_leave_a_like: Please login to be able to like this post
     post: Post
     post_rating: Post rating
     publish: Publish
