@@ -8,9 +8,13 @@ fos_ck_editor:
     configs:
         my_config_1:
             toolbar: "my_toolbar_1"
+        my_config_2:
+            toolbar: "my_toolbar_2"
     toolbars:
         configs:
             my_toolbar_1: [ "@document", "/", "@code" ]
+            my_toolbar_2: [ "@comment", "/", "@code" ]
         items:
             document: ['Bold', 'Italic', 'Underline', 'Strike', 'Blockquote', '-', 'Link', '-', 'RemoveFormat', '-', 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'Image', 'Table', '-', 'Styles', 'Format','Font','FontSize', '-', 'TextColor', 'BGColor', 'Source']
+            comment: ['Bold', 'Italic', 'Underline', 'Strike', 'Blockquote', '-', 'Link', '-', 'NumberedList', '-', 'Image', 'Table', '-', 'Font','FontSize', '-', 'TextColor', 'BGColor', 'Source']
             code: ['CodeSnippet']
