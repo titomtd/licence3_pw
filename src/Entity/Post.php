@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\PostRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -23,9 +25,9 @@ class Post
     private $createdAt;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\OneToMany(targetEntity="App\Entity\PostLike", mappedBy="post")
      */
-    private $score;
+    private $likes;
 
     /**
      * @ORM\Column(type="string")
@@ -48,6 +50,11 @@ class Post
      */
     private $user;
 
+    public function __construct()
+    {
+        $this->likes = new ArrayCollection();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -65,14 +72,33 @@ class Post
         return $this;
     }
 
-    public function getScore(): ?int
+    /**
+     * @return Collection|PostLike[]
+     */
+    public function getLikes(): Collection
     {
-        return $this->score;
+        return $this->likes;
     }
 
-    public function setScore(int $score): self
+    public function addLike(PostLike $like): self
     {
-        $this->score = $score;
+        if (!$this->likes->contains($like)) {
+            $this->likes[] = $like;
+            $like->setPost($this);
+        }
+
+        return $this;
+    }
+
+    public function removeLike(PostLike $like): self
+    {
+        if ($this->likes->contains($like)) {
+            $this->likes->removeElement($like);
+            // set the owning side to null (unless already changed)
+            if ($like->getPost() === $this) {
+                $like->setPost(null);
+            }
+        }
 
         return $this;
     }
@@ -123,5 +149,14 @@ class Post
         $this->language = $language;
 
         return $this;
+    }
+
+    public function isLikedByUser(User $user) : bool
+    {
+        foreach($this->likes as $like){
+            if($like->getUser() === $user) return true;
+        }
+        return false;
+
     }
 }
