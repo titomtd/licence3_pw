@@ -20,24 +20,36 @@
                 {{ post.content|raw }}
             </div>
             <hr>
-            <div class="card my-4">
-                <h5 class="card-header">{{ 'app.ui.leave_a_comment'|trans }}</h5>
-                <div class="card-body">
-                    <form>
+            {% if app.user %}
+                <div class="card my-4">
+                    <h5 class="card-header">{{ 'app.ui.leave_a_comment'|trans }}</h5>
+                    <div class="card-body">
+                        {{ form_start(commentForm)}}
                         <div class="form-group">
-                            <textarea class="form-control" rows="3"></textarea>
+                            {{ form_label(commentForm.content, ('app.ui.content'|trans)) }}
+                            {{ form_errors(commentForm.content) }}
+                            {{ form_widget(commentForm.content, {'attr': {'class': 'form-control', 'placeholder': ('app.ui.content'|trans)}}) }}
                         </div>
                         <button type="submit" class="btn btn-primary">{{ 'app.ui.comment'|trans }}</button>
-                    </form>
+                        {{ form_end(commentForm)}}
+                    </div>
                 </div>
-            </div>
-            <div class="media mb-4">
-                <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-                <div class="media-body">
-                    <h5 class="mt-0">Commenter Name</h5>
-                    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+            {% else %}
+                <div class="alert alert-dismissible alert-info">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <h4 class="alert-heading">{{ 'app.ui.warning'|trans }}</h4>
+                    <p class="mb-0">{{ 'app.ui.please_connect_to_leave_a_comment'|trans }}</p>
                 </div>
-            </div>
+            {% endif %}
+            {% for postComment in post.postComments %}
+                <div class="media mb-4">
+                    <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+                    <div class="media-body">
+                        <h5 class="mt-0"><strong>{{ postComment.user.username }}</strong> <small>{{ postComment.createdAt | date }}</small></h5>
+                        {{ postComment.content | raw }}
+                    </div>
+                </div>
+            {% endfor %}
         </div>
         <div class="col-lg-4">
             <div class="row">
@@ -51,7 +63,7 @@
                                 <i class="far fa-thumbs-up"></i>
                             {% endif %}
                             <span class="js-likes">{{ post.likes | length }}</span>
-                            <span class="js-label">J'aime</span>
+                            <span class="js-label">{{ 'app.ui.i_like'|trans }}</span>
                         </a>
                     </div>
                 </div>

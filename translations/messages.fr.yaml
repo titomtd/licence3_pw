@@ -8,6 +8,7 @@ app:
     email: Adresse mail
     filter_by_language: Filtrer par langage
     home: Accueil
+    i_like: J'aime
     java: Java
     language: Langage
     leave_a_comment: Laisser un commentaire
@@ -18,6 +19,7 @@ app:
     number_post: '%number% publication(s)'
     password: Mot de passe
     php: PHP
+    please_connect_to_leave_a_comment: Veuillez vous connecter pour pouvoir laisser un commentaire
     post: Publications
     post_rating: Score de la publication
     publish: Publier
@@ -28,3 +30,4 @@ app:
     title: Titre
     username: Nom d'utilisateur
     view_profile: Voir le profil
+    Warning: Attention !

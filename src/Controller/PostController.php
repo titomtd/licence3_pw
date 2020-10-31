@@ -3,7 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\Post;
+use App\Entity\PostComment;
 use App\Entity\PostLike;
+use App\Form\PostCommentFormType;
 use App\Form\PostFormType;
 use App\Repository\PostLikeRepository;
 use App\Repository\PostRepository;
@@ -42,13 +44,32 @@ class PostController extends AbstractController
     /**
      * @Route("/post/show/{id}", name="post_show")
      */
-    public function changeLocale(Post $post, UserRepository $userRepository)
+    public function show(Post $post, UserRepository $userRepository, Request $request, ObjectManager $manager, ?UserInterface $user)
     {
+        $comment = new PostComment();
+
+        $form = $this->createForm(PostCommentFormType::class, $comment);
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()) {
+            $comment->setUser($user);
+            $comment->setCreatedAt(new \DateTime());
+            $comment->setPost($post);
+            $manager->persist($comment);
+            $manager->flush();
+
+            return $this->redirectToRoute('post_show', [
+                'id' => $post->getId()
+            ]);
+        }
+
         $users = $userRepository->findAll();
 
         return $this->render('post/show.html.twig', [
             'post' => $post,
             'users' => $users,
+            'commentForm' => $form->createView(),
         ]);
     }
 

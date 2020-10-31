@@ -50,9 +50,16 @@ class Post
      */
     private $user;
 
+    /**
+     * @ORM\OneToMany(targetEntity=PostComment::class, mappedBy="post")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $postComments;
+
     public function __construct()
     {
         $this->likes = new ArrayCollection();
+        $this->postComments = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -158,5 +165,35 @@ class Post
         }
         return false;
 
+    }
+
+    /**
+     * @return Collection|PostComment[]
+     */
+    public function getPostComments(): Collection
+    {
+        return $this->postComments;
+    }
+
+    public function addPostComment(PostComment $postComment): self
+    {
+        if (!$this->postComments->contains($postComment)) {
+            $this->postComments[] = $postComment;
+            $postComment->setPost($this);
+        }
+
+        return $this;
+    }
+
+    public function removePostComment(PostComment $postComment): self
+    {
+        if ($this->postComments->removeElement($postComment)) {
+            // set the owning side to null (unless already changed)
+            if ($postComment->getPost() === $this) {
+                $postComment->setPost(null);
+            }
+        }
+
+        return $this;
     }
 }
