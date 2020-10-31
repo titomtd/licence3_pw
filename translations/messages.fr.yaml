@@ -2,6 +2,7 @@ app:
   ui:
     add_new_post: Ajouter une nouvelle publication
     by: par
+    close: Fermer
     comment: Commenter
     confirm_password: Confirmez le mot de passe
     content: Contenu
@@ -20,6 +21,7 @@ app:
     password: Mot de passe
     php: PHP
     please_connect_to_leave_a_comment: Veuillez vous connecter pour pouvoir laisser un commentaire
+    please_connect_to_leave_a_like: Veuillez vous connecter pour pouvoir aimer cette publication
     post: Publications
     post_rating: Score de la publication
     publish: Publier
@@ -30,4 +32,4 @@ app:
     title: Titre
     username: Nom d'utilisateur
     view_profile: Voir le profil
-    Warning: Attention !
+    warning: Attention !
