@@ -5,11 +5,14 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="">Lien 1</a>
-            </li>
-        </ul>
+        <form class="navbar-form form-inline mx-auto" role="search">
+            <div class="input-group">
+                <input name="searchvalue" type="text" class="form-control" placeholder="{{ 'app.ui.search_a_post'|trans }}" required>
+                <div class="input-group-btn">
+                    <button class="btn btn-outline-light" style="margin-left: -3px" type="submit"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </form>
         <ul class="navbar-nav navbar-right">
             {% if app.user %}
                 <li class="nav-item dropdown">

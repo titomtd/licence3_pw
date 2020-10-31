@@ -25,7 +25,7 @@
             </div>
             <a href="{{ path('post_create') }}" class="btn btn-info mt-2">{{ 'app.ui.publish'|trans }}</a>
         </div>
-        <div class="col-7">
+        <div class="col-lg-7">
             {% for post in posts %}
                 <div class="card mt-2">
                     <div class="card-header"><span class="badge badge-info">{{ ('app.ui.'~post.language)|trans }}</span> <a href="" class="btn-link">{{ 'app.ui.shared_this_post'|trans({'%name%': post.user.username}) }}</a></div>
@@ -47,7 +47,7 @@
                 <div class="card-header">{{ 'app.ui.new_users'|trans }}</div>
                 <ul class="list-group list-group-flush">
                     {% for user in users %}
-                        <li class="list-group-item">
+                        <li class="list-group-item user-card">
                             <div class="row">
                                 <div class="col-8">
                                     <h5 class="card-title">{{ user.username }}</h5>
@@ -64,11 +64,4 @@
         </div>
     </div>
 </div>
-<style>
-    pre {
-        background-color: rgb(245, 246, 250);
-        padding: 7px;
-        border-radius: 5px;
-    }
-</style>
 {% endblock %}

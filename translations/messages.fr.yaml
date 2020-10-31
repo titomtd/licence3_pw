@@ -28,8 +28,12 @@ app:
     python: Python
     read_more: Lire la suite
     resgiter: Inscription
+    search: Rechercher
+    search_a_post: Rechercher une publication
     shared_this_post: '%name% a partagé cette publication'
+    this_website_was: "Ce site a été développé dans le cadre de la programmation web en licence 3 MIAGE à l'université de Rennes 1. Le projet avait pour but de créer un site utilisant les différents notions web: programmation orientée objet, sécurité, ajax..."
     title: Titre
     username: Nom d'utilisateur
     view_profile: Voir le profil
     warning: Attention !
+    website_developed_by: Ce site a été développé par Gilles Bancel, Simon Beaussier et Thomas Duchemin

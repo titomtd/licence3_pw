@@ -28,8 +28,12 @@ app:
     python: Python
     read_more: Read more
     register: Register
+    search: Search
+    search_a_post: Search a post
     shared_this_post: '%name% shared this post'
+    this_website_was: "This website was developed within the framework of web programming in license 3 MIAGE at the University of Rennes 1. The goal of the project was to create a site using different web concepts: object-oriented programming, security, ajax ..."
     title: Title
     username: Username
     view_profile: View profile
     warning: Warning !
+    website_developed_by: This website was developed by Gilles Bancel, Simon Beaussier and Thomas Duchemin
