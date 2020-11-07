@@ -3,3 +3,11 @@ pre {
     padding: 7px;
     border-radius: 5px;
 }
+
+.dpdot i {
+    font-size: 19px;
+    color:#bdc3c7;
+  }
+.dpdot i:hover {
+    color:grey;
+  }

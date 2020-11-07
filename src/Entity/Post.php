@@ -56,10 +56,16 @@ class Post
      */
     private $postComments;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $close;
+
     public function __construct()
     {
         $this->likes = new ArrayCollection();
         $this->postComments = new ArrayCollection();
+        $this->close = false;
     }
 
     public function getId(): ?int
@@ -193,6 +199,18 @@ class Post
                 $postComment->setPost(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getClose(): ?bool
+    {
+        return $this->close;
+    }
+
+    public function setClose(bool $close): self
+    {
+        $this->close = $close;
 
         return $this;
     }
