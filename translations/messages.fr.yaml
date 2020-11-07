@@ -18,8 +18,10 @@ app:
     logout: Déconnexion
     my_account: Mon compte
     new_users: Nouveaux utilisateurs
+    no_posts: Aucun résultat trouvé
     number_post: '%number% publication(s)'
     password: Mot de passe
+    posts_found: Résultat(s) trouvé(s)
     php: PHP
     please_connect_to_leave_a_comment: Veuillez vous connecter pour pouvoir laisser un commentaire
     please_connect_to_leave_a_like: Veuillez vous connecter pour pouvoir aimer cette publication

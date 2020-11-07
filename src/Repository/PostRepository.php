@@ -29,6 +29,24 @@ class PostRepository extends ServiceEntityRepository
             ->getSingleScalarResult();
     }
 
+    public function findByLanguage($language): array
+    {
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.language = :val')
+            ->orderBy('p.id', 'DESC')
+            ->setParameter('val', $language)
+            ->getQuery()
+            ->getResult();
+    }
+
+    public function findPosts(): array
+    {
+        return $this->createQueryBuilder('p')
+            ->orderBy('p.id', 'DESC')
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return Post[] Returns an array of Post objects
     //  */
