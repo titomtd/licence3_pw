@@ -1,5 +1,6 @@
 app:
   ui:
+    add_edit_post: Edit a post
     add_new_post: Add new post
     by: by
     close: Close
@@ -23,14 +24,21 @@ app:
     please_connect_to_leave_a_comment: Please login to be able to leave a comment
     please_connect_to_leave_a_like: Please login to be able to like this post
     post: Post
+    post_close: Close the post
+    post_delete: Delete the post
+    post_edit: Edit the post
     post_rating: Post rating
+    post_solve: This post has been resolved
+    post_show_solve: Resolved
     publish: Publish
     python: Python
     read_more: Read more
     register: Register
+    save: Save
     search: Search
     search_a_post: Search a post
     shared_this_post: '%name% shared this post'
+    the_post_was_closed: "This post has been closed by the author of the post or a member of the team"
     this_website_was: "This website was developed within the framework of web programming in license 3 MIAGE at the University of Rennes 1. The goal of the project was to create a site using different web concepts: object-oriented programming, security, ajax ..."
     title: Title
     username: Username

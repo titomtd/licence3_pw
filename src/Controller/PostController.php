@@ -74,26 +74,72 @@ class PostController extends AbstractController
     }
 
     /**
-     * @Route("/post/create", name="post_create")
+     * @Route("/post/{id}/close", name="post_close")
      */
-    public function create(Request $request, ObjectManager $manager, ?UserInterface $user): Response
+    public function postClose(Post $post, Request $request, ObjectManager $manager){
+
+        $post->setClose(true);
+        $manager->persist($post);
+        $manager->flush();
+        return $this->redirectToRoute('post_show', ['id' =>$post->getId()]);
+    }
+
+    /**
+     * @Route("/post/{id}/delete", name="post_delete")
+     */
+    public function postDelete(Post $post, Request $request, ObjectManager $manager){
+
+        $comments = $post->getPostComments();
+        foreach($comments as $comment){
+            $manager->remove($comment);
+            $manager->flush();
+        }
+
+        $likes = $post->getLikes();
+        foreach($likes as $like){
+            $manager->remove($like);
+            $manager->flush();
+        }
+
+        $manager->remove($post);
+        $manager->flush();
+
+        return $this->redirectToRoute('home');
+    }
+
+    /**
+     * @Route("/post/create", name="post_create")
+     * @Route("/post/{id}/edit", name="post_edit")
+     */
+    public function create(Post $post = null, Request $request, ObjectManager $manager, ?UserInterface $user): Response
     {
-        $post = new Post();
+        
+        if(!$post){
+            $post = new Post();
+        }
+        else if($user != $post->getUser()){
+            return $this->redirectToRoute('home');
+        }
+        
+
         $form = $this->createForm(PostFormType::class, $post);
 
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()) {
-            $post->setUser($user);
-            $post->setCreatedAt(new \DateTime());
+            if(!$post->getId()){
+                $post->setUser($user);
+                $post->setCreatedAt(new \DateTime());
+            }
             $manager->persist($post);
             $manager->flush();
 
-            return $this->redirectToRoute('home');
+            return $this->redirectToRoute('post_show', ['id' =>$post->getId()]);
         }
 
         return $this->render('post/create.html.twig', [
             'form' => $form->createView(),
+            'editMode' => $post->getId() !== null
         ]);
     }
 
