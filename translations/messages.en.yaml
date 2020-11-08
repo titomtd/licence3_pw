@@ -2,6 +2,7 @@ app:
   ui:
     add_edit_post: Edit a post
     add_new_post: Add new post
+    all: All
     by: by
     close: Close
     comment: Comment
@@ -21,7 +22,8 @@ app:
     no_posts: No result found
     number_post: '%number% post(s)'
     password: Password
-    posts_found: Result(s) found
+    post_found: Result found
+    posts_found: Results found
     php: PHP
     please_connect_to_leave_a_comment: Please login to be able to leave a comment
     please_connect_to_leave_a_like: Please login to be able to like this post
