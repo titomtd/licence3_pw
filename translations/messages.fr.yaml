@@ -2,6 +2,7 @@ app:
   ui:
     add_edit_post: Modifier une publication
     add_new_post: Ajouter une nouvelle publication
+    all: Tout
     by: par
     close: Fermer
     comment: Commenter
@@ -21,7 +22,8 @@ app:
     no_posts: Aucun résultat trouvé
     number_post: '%number% publication(s)'
     password: Mot de passe
-    posts_found: Résultat(s) trouvé(s)
+    post_found: Résultat trouvé
+    posts_found: Résultats trouvés
     php: PHP
     please_connect_to_leave_a_comment: Veuillez vous connecter pour pouvoir laisser un commentaire
     please_connect_to_leave_a_like: Veuillez vous connecter pour pouvoir aimer cette publication

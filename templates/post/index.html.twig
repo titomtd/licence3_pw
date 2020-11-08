@@ -10,6 +10,10 @@
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
+                        <a class="btn btn-link" href="{{ path('home') }}">{{ 'app.ui.all'|trans }}</a>
+                        <span class="badge badge-primary badge-pill">{{ nb_total }}</span>
+                    </li>
+                    <li class="list-group-item">
                         <a class="btn btn-link" href="{{ path('homeFilter', {'language' : "java"}) }}">{{ 'app.ui.java'|trans }}</a>
                         <span class="badge badge-primary badge-pill">{{ nb_java }}</span>
                     </li>
@@ -26,11 +30,18 @@
             <a href="{{ path('post_create') }}" class="btn btn-info mt-2">{{ 'app.ui.publish'|trans }}</a>
         </div>
         <div class="col-lg-7">
-        <br>
             {% if nbPosts == 0 and filterSearch %}
-                <h3>{{ 'app.ui.no_posts'|trans }}</h3>
+                <div class="alert alert-warning mt-2">
+                    {{ 'app.ui.no_posts'|trans }}
+                </div>
+            {% elseif nbPosts == 1 and filterSearch %}
+                <div class="alert alert-success mt-2">
+                    <strong> {{nbPosts}} </strong> {{ 'app.ui.post_found'|trans }}
+                </div>
             {% elseif filterSearch %}
-                <h3>{{nbPosts}} {{ 'app.ui.posts_found'|trans }}</h3>
+                <div class="alert alert-success mt-2">
+                    <strong> {{nbPosts}} </strong> {{ 'app.ui.posts_found'|trans }}
+                </div>
             {% endif %}
             {% for post in posts %}
                 <div class="card mt-2">

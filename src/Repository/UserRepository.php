@@ -21,7 +21,7 @@ class UserRepository extends ServiceEntityRepository
 
     public function findLastFiveUsers(): array
     {
-        return $this->createQueryBuilder('u')
+        return $this->createQueryBuilder('o')
             ->addOrderBy('o.id', 'DESC')
             ->setMaxResults(5)
             ->getQuery()

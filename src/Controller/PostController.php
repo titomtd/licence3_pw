@@ -22,7 +22,7 @@ class PostController extends AbstractController
 {
     /**
      * @Route("/", name="home")
-     * @Route("/{language}", name="homeFilter")
+     * @Route("/posts/{language}", name="homeFilter")
      */
     public function index($language = null, PostRepository $postRepository, UserRepository $userRepository): Response
     {
@@ -40,6 +40,7 @@ class PostController extends AbstractController
         $nbPhp = $postRepository->countBy('php');
         $nbJava = $postRepository->countBy('java');
         $nbPython = $postRepository->countBy('python');
+        $nbTotal = count($postRepository->findAll());
 
         return $this->render('post/index.html.twig', [
             'filterSearch' => $search,
@@ -49,6 +50,7 @@ class PostController extends AbstractController
             'nb_php' => $nbPhp,
             'nb_java' => $nbJava,
             'nb_python' => $nbPython,
+            'nb_total' => $nbTotal,
         ]);
     }
 
