@@ -6,10 +6,12 @@ app:
     by: par
     close: Fermer
     comment: Commenter
+    comments: Commentaires
     confirm_password: Confirmez le mot de passe
     content: Contenu
     email: Adresse mail
     filter_by_language: Filtrer par langage
+    follow: Suivre
     home: Accueil
     i_like: J'aime
     java: Java
@@ -17,6 +19,7 @@ app:
     leave_a_comment: Laisser un commentaire
     login: Connexion
     logout: Déconnexion
+    message: Message
     my_account: Mon compte
     new_users: Nouveaux utilisateurs
     no_posts: Aucun résultat trouvé
@@ -45,6 +48,7 @@ app:
     the_post_was_closed: "Cette publication a été fermée par l'auteur de cette dernière ou un membre de l'équipe"
     this_website_was: "Ce site a été développé dans le cadre de la programmation web en licence 3 MIAGE à l'université de Rennes 1. Le projet avait pour but de créer un site utilisant les différents notions web: programmation orientée objet, sécurité, ajax..."
     title: Titre
+    user: Utilisateur
     username: Nom d'utilisateur
     view_profile: Voir le profil
     warning: Attention !

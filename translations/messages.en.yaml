@@ -6,10 +6,12 @@ app:
     by: by
     close: Close
     comment: Comment
+    comments: Comments
     confirm_password: Confirm password
     content: Content
     email: Mail adress
     filter_by_language: Filter by language
+    follow: Follow
     home: Home
     i_like: I like
     java: Java
@@ -17,6 +19,7 @@ app:
     leave_a_comment: Leave a comment
     login: Login
     logout: Logout
+    message: Message
     my_account: My account
     new_users: New users
     no_posts: No result found
@@ -27,7 +30,7 @@ app:
     php: PHP
     please_connect_to_leave_a_comment: Please login to be able to leave a comment
     please_connect_to_leave_a_like: Please login to be able to like this post
-    post: Post
+    post: Posts
     post_close: Close the post
     post_delete: Delete the post
     post_edit: Edit the post
@@ -45,6 +48,7 @@ app:
     the_post_was_closed: "This post has been closed by the author of the post or a member of the team"
     this_website_was: "This website was developed within the framework of web programming in license 3 MIAGE at the University of Rennes 1. The goal of the project was to create a site using different web concepts: object-oriented programming, security, ajax ..."
     title: Title
+    user: User
     username: Username
     view_profile: View profile
     warning: Warning !
