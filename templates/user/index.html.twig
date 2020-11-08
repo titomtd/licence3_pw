@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'app.ui.user'|trans }}{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('css/user/index.css') }}" rel="stylesheet" />
+{% endblock %}
+
+{% block body %}
+<div class="container mt-2">
+    <nav aria-label="breadcrumb" class="main-breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ path('home') }}">{{ 'app.ui.home'|trans }}</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ 'app.ui.user'|trans }}</li>
+        </ol>
+    </nav>
+    <div class="row justify-content-center">
+        <div class="col-sm-8 mt-3 mb-5">
+            {{ form_start(form) }}
+                <div class="input-group">
+                    {{ form_widget(form.username, {'attr': {'class': 'form-control', 'placeholder': ('app.ui.username'|trans)}}) }}
+                    <div class="input-group-append"><button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button></div>
+                </div>
+                <small id="searchHelp" class="form-text text-muted">{{ users | length }} résultats</small>
+            {{ form_end(form) }}
+        </div>
+    </div>
+    <div class="row justify-content-md-center">
+        {% for user in users %}
+            <div class="col-sm-6 col-md-4">
+                <div class="card mt-2">
+                    <div class="card-body">
+                        <div class="align-items-center text-center">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="100">
+                            <div class="mt-3">
+                                <a style="font-size: 20px;" href="{{ path('user_show', {'id' : user.id}) }}">{{ user.username }}</a>
+                                <p class="text-secondary mb-1">Profession</p>
+                                <p class="text-muted font-size-sm">Ville</p>
+                                <button class="btn btn-primary">{{ 'app.ui.follow'|trans }}</button>
+                                <button class="btn btn-outline-primary">{{ 'app.ui.message'|trans }}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
