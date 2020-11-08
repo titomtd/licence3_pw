@@ -22,10 +22,19 @@ class PostController extends AbstractController
 {
     /**
      * @Route("/", name="home")
+     * @Route("/{language}", name="homeFilter")
      */
-    public function index(PostRepository $postRepository, UserRepository $userRepository): Response
+    public function index($language = null, PostRepository $postRepository, UserRepository $userRepository): Response
     {
-        $posts = $postRepository->findAll();
+        if($language){
+            $posts = $postRepository->findByLanguage($language); 
+            $search = true;
+        }
+        else{
+            $posts = $postRepository->findPosts();
+            $search = false;
+        }
+
         $users = $userRepository->findAll();
 
         $nbPhp = $postRepository->countBy('php');
@@ -33,6 +42,8 @@ class PostController extends AbstractController
         $nbPython = $postRepository->countBy('python');
 
         return $this->render('post/index.html.twig', [
+            'filterSearch' => $search,
+            'nbPosts' => count($posts),
             'posts' => $posts,
             'users' => $users,
             'nb_php' => $nbPhp,

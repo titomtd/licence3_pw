@@ -18,8 +18,10 @@ app:
     logout: Logout
     my_account: My account
     new_users: New users
+    no_posts: No result found
     number_post: '%number% post(s)'
     password: Password
+    posts_found: Result(s) found
     php: PHP
     please_connect_to_leave_a_comment: Please login to be able to leave a comment
     please_connect_to_leave_a_like: Please login to be able to like this post
