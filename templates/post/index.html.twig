@@ -45,7 +45,7 @@
             {% endif %}
             {% for post in posts %}
                 <div class="card mt-2">
-                    <div class="card-header"><span class="badge badge-info">{{ ('app.ui.'~post.language)|trans }}</span> <a href="" class="btn-link">{{ 'app.ui.shared_this_post'|trans({'%name%': post.user.username}) }}</a>
+                    <div class="card-header"><span class="badge badge-info">{{ ('app.ui.'~post.language)|trans }}</span> <a href="{{ path('user_show', {'id' : post.user.id}) }}" class="btn-link">{{ 'app.ui.shared_this_post'|trans({'%name%': post.user.username}) }}</a>
                     {% if post.close %}
                         <span style="float: right;" class="badge badge-success">{{ 'app.ui.post_show_solve'|trans }}</span>
                     {% endif %}
@@ -75,7 +75,7 @@
                                     <p class="card-text">{{ 'app.ui.number_post'|trans({'%number%': user.getPostNumber}) }}</p>
                                 </div>
                                 <div class="col-4">
-                                    <a href="" class="btn btn-link btn-sm">{{ 'app.ui.view_profile'|trans }}</a>
+                                    <a href="{{ path('user_show', { 'id' : user.id }) }}" class="btn btn-link btn-sm">{{ 'app.ui.view_profile'|trans }}</a>
                                 </div>
                             </div>
                         </li>
