@@ -9,6 +9,8 @@ app:
     comments: Comments
     confirm_password: Confirm password
     content: Content
+    dashboard: Dashboard
+    disabled: Disabled
     email: Mail adress
     filter_by_language: Filter by language
     follow: Follow
@@ -24,6 +26,7 @@ app:
     new_users: New users
     no_posts: No result found
     number_post: '%number% post(s)'
+    oldPassword: Old password
     password: Password
     post_found: Result found
     posts_found: Results found
@@ -48,6 +51,8 @@ app:
     the_post_was_closed: "This post has been closed by the author of the post or a member of the team"
     this_website_was: "This website was developed within the framework of web programming in license 3 MIAGE at the University of Rennes 1. The goal of the project was to create a site using different web concepts: object-oriented programming, security, ajax ..."
     title: Title
+    update_password: Update password
+    update_profile: Update profile
     user: User
     username: Username
     view_profile: View profile

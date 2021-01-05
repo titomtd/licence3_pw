@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'app.ui.my_account'|trans }}{% endblock %}
+
+{% block breadcrumb %}
+<div class="container mt-2">
+    <div class="row">
+        <div class="col">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ path('home') }}">{{ 'app.ui.home'|trans }}</a></li>
+                <li class="breadcrumb-item"><a href="{{ path('my_account_dashboard') }}">{{ 'app.ui.my_account'|trans }}</a></li>
+                <li class="breadcrumb-item active">{{ 'app.ui.comments'|trans }}</li>
+            </ol>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="nav nav-pills flex-column flex-sm-row">
+                    <a class="flex-sm-fill text-sm-center nav-link" href="{{ path('my_account_dashboard') }}">{{ 'app.ui.dashboard'|trans }}</a>
+                    <a class="flex-sm-fill text-sm-center nav-link" href="{{ path('my_account_update_profile') }}">{{ 'app.ui.update_profile'|trans }}</a>
+                    <a class="flex-sm-fill text-sm-center nav-link active" href="{{ path('my_account_comments') }}">{{ 'app.ui.comments'|trans }}</a>
+                    <a class="flex-sm-fill text-sm-center nav-link" href="{{ path('my_account_update_password') }}">{{ 'app.ui.update_password'|trans }}</a>
+                </nav>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">{{ 'app.ui.comments'|trans }}</div>
+                    <div class="card-body">
+                        <div class="container">
+                            <div class="row">
+                                {% for postComment in user.postComments %}
+                                    <div class="col-12">
+                                        <div>
+                                            <a class="mb-0" href="{{ path('post_show', {'id' : postComment.post.id}) }}">{{ postComment.post.title }}</a>
+                                            <p><small>{{ postComment.user.username }} - <cite title="Source Title">{{ postComment.createdAt|date("m/d/Y") }}</cite></small></p>
+                                            <p class="mb-0">{{ postComment.content | raw }}</p>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
