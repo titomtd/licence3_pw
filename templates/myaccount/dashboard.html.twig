@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'app.ui.my_account'|trans }}{% endblock %}
+
+{% block breadcrumb %}
+<div class="container mt-2">
+    <div class="row">
+        <div class="col">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ path('home') }}">{{ 'app.ui.home'|trans }}</a></li>
+                <li class="breadcrumb-item active">{{ 'app.ui.my_account'|trans }}</li>
+            </ol>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <nav class="nav nav-pills flex-column flex-sm-row">
+                <a class="flex-sm-fill text-sm-center nav-link active" href="{{ path('my_account_dashboard') }}">{{ 'app.ui.dashboard'|trans }}</a>
+                <a class="flex-sm-fill text-sm-center nav-link" href="{{ path('my_account_update_profile') }}">{{ 'app.ui.update_profile'|trans }}</a>
+                <a class="flex-sm-fill text-sm-center nav-link" href="{{ path('my_account_comments') }}">{{ 'app.ui.comments'|trans }}</a>
+                <a class="flex-sm-fill text-sm-center nav-link" href="{{ path('my_account_update_password') }}">{{ 'app.ui.update_password'|trans }}</a>
+            </nav>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">{{ 'app.ui.dashboard'|trans }}</div>
+                <div class="card-body">
+                    <div class="container">
+                        <div class="row">
+                            <table class="table table-hover">
+                                <thead>
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">{{ 'app.ui.username'|trans }}</th>
+                                    <th scope="col">{{ 'app.ui.email'|trans }}</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="table-active">
+                                    <th scope="row">#{{ user.id }}</th>
+                                    <td>{{ user.username }}</td>
+                                    <td>{{ user.email }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

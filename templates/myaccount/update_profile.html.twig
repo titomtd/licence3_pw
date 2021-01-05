@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'app.ui.my_account'|trans }}{% endblock %}
+
+{% block breadcrumb %}
+<div class="container mt-2">
+    <div class="row">
+        <div class="col">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ path('home') }}">{{ 'app.ui.home'|trans }}</a></li>
+                <li class="breadcrumb-item"><a href="{{ path('my_account_dashboard') }}">{{ 'app.ui.my_account'|trans }}</a></li>
+                <li class="breadcrumb-item active">{{ 'app.ui.update_profile'|trans }}</li>
+            </ol>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="nav nav-pills flex-column flex-sm-row">
+                    <a class="flex-sm-fill text-sm-center nav-link" href="{{ path('my_account_dashboard') }}">{{ 'app.ui.dashboard'|trans }}</a>
+                    <a class="flex-sm-fill text-sm-center nav-link active" href="{{ path('my_account_update_profile') }}">{{ 'app.ui.update_profile'|trans }}</a>
+                    <a class="flex-sm-fill text-sm-center nav-link" href="{{ path('my_account_comments') }}">{{ 'app.ui.comments'|trans }}</a>
+                    <a class="flex-sm-fill text-sm-center nav-link" href="{{ path('my_account_update_password') }}">{{ 'app.ui.update_password'|trans }}</a>
+                </nav>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">{{ 'app.ui.update_profile'|trans }}</div>
+                    <div class="card-body">
+                        {{ form_start(form) }}
+                        <div class="form-group">
+                            {{ form_label(form.username, ('app.ui.username'|trans)) }}
+                            {{ form_errors(form.username) }}
+                            {{ form_widget(form.username, {'attr': {'class': 'form-control'}}) }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_label(form.email, ('app.ui.email'|trans)) }}
+                            {{ form_errors(form.email) }}
+                            {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success">{{ 'app.ui.update_profile'|trans }}</button>
+                        </div>
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

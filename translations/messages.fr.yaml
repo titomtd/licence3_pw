@@ -9,6 +9,8 @@ app:
     comments: Commentaires
     confirm_password: Confirmez le mot de passe
     content: Contenu
+    dashboard: Tableau de bord
+    disabled: Désactivé
     email: Adresse mail
     filter_by_language: Filtrer par langage
     follow: Suivre
@@ -24,6 +26,7 @@ app:
     new_users: Nouveaux utilisateurs
     no_posts: Aucun résultat trouvé
     number_post: '%number% publication(s)'
+    oldPassword: Ancien mot de passe
     password: Mot de passe
     post_found: Résultat trouvé
     posts_found: Résultats trouvés
@@ -48,6 +51,8 @@ app:
     the_post_was_closed: "Cette publication a été fermée par l'auteur de cette dernière ou un membre de l'équipe"
     this_website_was: "Ce site a été développé dans le cadre de la programmation web en licence 3 MIAGE à l'université de Rennes 1. Le projet avait pour but de créer un site utilisant les différents notions web: programmation orientée objet, sécurité, ajax..."
     title: Titre
+    update_password: Changer de mot de passe
+    update_profile: Mettre à jour le profil
     user: Utilisateur
     username: Nom d'utilisateur
     view_profile: Voir le profil
