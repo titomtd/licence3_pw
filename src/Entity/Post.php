@@ -61,6 +61,11 @@ class Post
      */
     private $close;
 
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $filename;
+
     public function __construct()
     {
         $this->likes = new ArrayCollection();
@@ -213,5 +218,20 @@ class Post
         $this->close = $close;
 
         return $this;
+    }
+
+    public function getFilename()
+    {
+        return $this->filename;
+    }
+
+    public function setFilename($filename): void
+    {
+        $this->filename = $filename;
+    }
+
+    public function hasFile(): ?bool
+    {
+        return $this->filename != null;
     }
 }
