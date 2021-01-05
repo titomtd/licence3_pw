@@ -1,5 +1,6 @@
 app:
   ui:
+    a_file_exist: Un fichier est lié à cette publication, vous pouvez le télécharger via le lien ci-dessous.
     add_edit_post: Modifier une publication
     add_new_post: Ajouter une nouvelle publication
     all: Tout
@@ -11,7 +12,9 @@ app:
     content: Contenu
     dashboard: Tableau de bord
     disabled: Désactivé
+    download: Télécharger
     email: Adresse mail
+    filename: Nom du fichier
     filter_by_language: Filtrer par langage
     follow: Suivre
     home: Accueil

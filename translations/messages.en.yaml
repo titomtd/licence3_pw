@@ -1,5 +1,6 @@
 app:
   ui:
+    a_file_exist: There is a file linked to this post, you can download it via the link below.
     add_edit_post: Edit a post
     add_new_post: Add new post
     all: All
@@ -11,7 +12,9 @@ app:
     content: Content
     dashboard: Dashboard
     disabled: Disabled
+    download: Download
     email: Mail adress
+    filename: Filename
     filter_by_language: Filter by language
     follow: Follow
     home: Home

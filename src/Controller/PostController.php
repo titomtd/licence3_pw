@@ -144,6 +144,12 @@ class PostController extends AbstractController
                 $post->setUser($user);
                 $post->setCreatedAt(new \DateTime());
             }
+            if($post->getFilename() !=null){
+                $file = $post->getFilename();
+                $filename = md5(uniqid()).'.'.$file->guessExtension();
+                $file->move($this->getParameter('upload_file_directory'), $filename);
+                $post->setFilename($filename);
+            }
             $manager->persist($post);
             $manager->flush();
 

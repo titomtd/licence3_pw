@@ -29,6 +29,18 @@
                         {{ form_errors(form.content) }}
                         {{ form_widget(form.content, {'attr': {'class': 'form-control', 'placeholder': ('app.ui.content'|trans)}}) }}
                     </div>
+                    <hr>
+                    {% if form.vars.value.hasFile %}
+                    <div class="form-group">
+                        <p>{{ 'app.ui.a_file_exist' | trans }}</p>
+                        <a class="btn btn-secondary"href="{{ absolute_url(asset('uploads/files/')) ~ form.vars.value.filename }}" download>{{ 'app.ui.download' | trans}}</a>
+                    </div>
+                    {% endif %}
+                    <div class="form-group">
+                        {{ form_label(form.filename, ('app.ui.filename'|trans)) }}
+                        {{ form_errors(form.filename) }}
+                        {{ form_widget(form.filename, {'attr': {'class': 'form-control-file'}}) }}
+                    </div>
                     {% if editMode %}
                         <button type="submit" class="btn btn-success">{{ 'app.ui.save'|trans }}</button>
                     {% else %}

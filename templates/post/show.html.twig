@@ -39,6 +39,13 @@
                 {{ post.content|raw }}
             </div>
             <hr>
+            {% if post.hasFile %}
+            <div>
+                <p>{{ 'app.ui.a_file_exist' | trans }}</p>
+                <a class="btn btn-secondary"href="{{ absolute_url(asset('uploads/files/')) ~ post.filename }}" download>{{ 'app.ui.download' | trans}}</a>
+            </div>
+            <hr>
+            {% endif %}
             {% if app.user and post.close == false %}
                 <div class="card my-4">
                     <h5 class="card-header">{{ 'app.ui.leave_a_comment'|trans }}</h5>
