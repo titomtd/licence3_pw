@@ -44,6 +44,18 @@
                             {{ form_errors(form.email) }}
                             {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
                         </div>
+                        <hr>
+                        {% if form.vars.value.hasPicture %}
+                            <div class="form-group">
+                                <p>{{ 'app.ui.a_picture_exist' | trans }}</p>
+                                <a class="btn btn-secondary"href="{{ absolute_url(asset('uploads/pictures/')) ~ form.vars.value.pictureFileName }}" download>{{ 'app.ui.download' | trans}}</a>
+                            </div>
+                        {% endif %}
+                        <div class="form-group">
+                            {{ form_label(form.pictureFileName, ('app.ui.picture_file_name'|trans)) }}
+                            {{ form_errors(form.pictureFileName) }}
+                            {{ form_widget(form.pictureFileName, {'attr': {'class': 'form-control-file'}}) }}
+                        </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-success">{{ 'app.ui.update_profile'|trans }}</button>
                         </div>

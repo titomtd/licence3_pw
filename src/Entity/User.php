@@ -58,6 +58,11 @@ class User implements UserInterface
      */
     private $postComments;
 
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $pictureFileName;
+
     public function __construct()
     {
         $this->posts = new ArrayCollection();
@@ -193,5 +198,20 @@ class User implements UserInterface
         }
 
         return $this;
+    }
+
+    public function getPictureFilename()
+    {
+        return $this->pictureFileName;
+    }
+
+    public function setPictureFilename($pictureFileName): void
+    {
+        $this->pictureFileName = $pictureFileName;
+    }
+
+    public function hasPicture(): ?bool
+    {
+        return $this->pictureFileName != null;
     }
 }

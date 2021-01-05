@@ -1,6 +1,7 @@
 app:
   ui:
     a_file_exist: There is a file linked to this post, you can download it via the link below.
+    a_picture_exist: You already have a profile picture which you can download below.
     add_edit_post: Edit a post
     add_new_post: Add new post
     all: All
@@ -31,6 +32,7 @@ app:
     number_post: '%number% post(s)'
     oldPassword: Old password
     password: Password
+    picture_file_name: Picture
     post_found: Result found
     posts_found: Results found
     php: PHP
