@@ -1,6 +1,7 @@
 app:
   ui:
     a_file_exist: Un fichier est lié à cette publication, vous pouvez le télécharger via le lien ci-dessous.
+    a_picture_exist: Vous possédez déjà une image de profil que vous pouvez télécharger ci-dessous.
     add_edit_post: Modifier une publication
     add_new_post: Ajouter une nouvelle publication
     all: Tout
@@ -31,6 +32,7 @@ app:
     number_post: '%number% publication(s)'
     oldPassword: Ancien mot de passe
     password: Mot de passe
+    picture_file_name: Image
     post_found: Résultat trouvé
     posts_found: Résultats trouvés
     php: PHP
