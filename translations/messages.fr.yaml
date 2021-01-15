@@ -48,7 +48,7 @@ app:
     publish: Publier
     python: Python
     read_more: Lire la suite
-    resgiter: Inscription
+    register: Inscription
     save: Enregistrer
     search: Rechercher
     search_a_post: Rechercher une publication

@@ -15,9 +15,10 @@ class UserType extends AbstractType
         $builder
             ->add('username')
             ->add('email')
-            ->add('pictureFileName', FileType::class,  array(
+            ->add('pictureFileName', FileType::class,  [
                 'data_class' => null,
-            ))
+                'required' => false,
+            ])
         ;
     }
 
