@@ -38,7 +38,10 @@ class PostFormType extends AbstractType
                     'Python' => Languages::PYTHON,
                 ],
             ])
-            ->add('filename', FileType::class,  array('data_class' => null))
+            ->add('filename', FileType::class,  [
+                'data_class' => null,
+                'required' => false,
+            ])
         ;
     }
 
