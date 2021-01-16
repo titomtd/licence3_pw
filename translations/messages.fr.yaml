@@ -14,6 +14,7 @@ app:
     dashboard: Tableau de bord
     disabled: Désactivé
     download: Télécharger
+    edit: Editer
     email: Adresse mail
     filename: Nom du fichier
     filter_by_language: Filtrer par langage
@@ -38,7 +39,7 @@ app:
     php: PHP
     please_connect_to_leave_a_comment: Veuillez vous connecter pour pouvoir laisser un commentaire
     please_connect_to_leave_a_like: Veuillez vous connecter pour pouvoir aimer cette publication
-    post: Publications
+    post: Publication
     post_close: Fermer la publication
     post_delete: Supprimer la publication
     post_edit: Modifier la publication

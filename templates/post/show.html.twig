@@ -1,5 +1,7 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}{{ post.title }}{% endblock %}
+
 {% block body %}
 <div class="container">
     <div class="row">
@@ -75,7 +77,13 @@
             {% endif %}
             {% for postComment in post.postComments %}
                 <div class="media mb-4">
-                    <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+                    <img src="
+                            {% if postComment.user.hasPicture %}
+                                {{ asset('uploads/pictures/') ~ user.pictureFileName }}
+                            {% else %}
+                                https://bootdey.com/img/Content/avatar/avatar7.png
+                            {% endif %}
+                            " alt="Admin" class="d-flex mr-3 rounded-circle" width="50"  height="50">
                     <div class="media-body">
                         <h5 class="mt-0"><strong>{{ postComment.user.username }}</strong> <small>{{ postComment.createdAt | date }}</small></h5>
                         {{ postComment.content | raw }}
