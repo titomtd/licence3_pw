@@ -12,6 +12,7 @@ use App\Repository\PostRepository;
 use App\Repository\UserRepository;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
@@ -159,6 +160,31 @@ class PostController extends AbstractController
         return $this->render('post/create.html.twig', [
             'form' => $form->createView(),
             'editMode' => $post->getId() !== null
+        ]);
+    }
+
+    /**
+     * @Route("/post", name="post_search")
+     */
+    public function postSearch(PostRepository $postRepository, Request $request): Response
+    {
+        $posts = $postRepository->findAll();
+
+        $form = $this->createFormBuilder()
+            ->add('title', TextType::class,
+                array('required' => false))
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $data = $form->getData();
+            $posts = $postRepository->findPostByTitle($data['title']);
+        }
+
+        return $this->render('post/post_search.html.twig', [
+            'posts' => $posts,
+            'form' => $form->createView(),
         ]);
     }
 

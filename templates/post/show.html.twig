@@ -119,7 +119,7 @@
                                             <p class="card-text">{{ 'app.ui.number_post'|trans({'%number%': user.getPostNumber}) }}</p>
                                         </div>
                                         <div class="col-4">
-                                            <a href="" class="btn btn-link btn-sm">{{ 'app.ui.view_profile'|trans }}</a>
+                                            <a href="{{ path('user_show', { 'id' : user.id }) }}" class="btn btn-link btn-sm">{{ 'app.ui.view_profile'|trans }}</a>
                                         </div>
                                     </div>
                                 </li>

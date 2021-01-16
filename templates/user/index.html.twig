@@ -21,7 +21,7 @@
                     {{ form_widget(form.username, {'attr': {'class': 'form-control', 'placeholder': ('app.ui.username'|trans)}}) }}
                     <div class="input-group-append"><button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button></div>
                 </div>
-                <small id="searchHelp" class="form-text text-muted">{{ users | length }} résultats</small>
+                <small id="searchHelp" class="form-text text-muted">{{ 'app.ui.number_result'|trans({'%number%': (users | length)}) }}</small>
             {{ form_end(form) }}
         </div>
     </div>
