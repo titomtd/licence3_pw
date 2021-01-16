@@ -8,6 +8,7 @@
         <div class="col-lg-8">
             <ol class="breadcrumb my-4">
                 <li class="breadcrumb-item"><a href="{{ path('home') }}">{{ 'app.ui.home'|trans }}</a></li>
+                <li class="breadcrumb-item"><a href="{{ path('post_search') }}">{{ 'app.ui.post'|trans }}</a></li>
                 <li class="breadcrumb-item active">{{ post.title }}</li>
             </ol>
             {% if post.close %}
@@ -79,13 +80,13 @@
                 <div class="media mb-4">
                     <img src="
                             {% if postComment.user.hasPicture %}
-                                {{ asset('uploads/pictures/') ~ user.pictureFileName }}
+                                {{ asset('uploads/pictures/') ~ postComment.user.pictureFileName }}
                             {% else %}
                                 https://bootdey.com/img/Content/avatar/avatar7.png
                             {% endif %}
                             " alt="Admin" class="d-flex mr-3 rounded-circle" width="50"  height="50">
                     <div class="media-body">
-                        <h5 class="mt-0"><strong>{{ postComment.user.username }}</strong> <small>{{ postComment.createdAt | date }}</small></h5>
+                        <h5 class="mt-0"><a href="{{ path('user_show', {'id' : postComment.user.id}) }}"><strong>{{ postComment.user.username }}</strong></a> <small>{{ postComment.createdAt | date }}</small></h5>
                         {{ postComment.content | raw }}
                     </div>
                 </div>
