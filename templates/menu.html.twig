@@ -1,37 +1,54 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="{{ path('home') }}">Renhelp</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <form class="navbar-form form-inline mx-auto" role="search">
-            <div class="input-group">
-                <input name="searchvalue" type="text" class="form-control" placeholder="{{ 'app.ui.search_a_post'|trans }}" required>
-                <div class="input-group-append"><button class="btn btn-outline-light"><i class="fas fa-search"></i></button></div>
-            </div>
-        </form>
-        <ul class="navbar-nav navbar-right">
-            {% if app.user %}
+    <div class="container">
+        <a class="navbar-brand" href="{{ path('home') }}">
+            <img src="{{ asset('img/scoop-it-logo-menu.svg') }}" alt="" width="35" height="35">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ path('home') }}">{{ 'app.ui.home' | trans }}
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        {{ app.user.username }}
+                        {{ 'app.ui.search' | trans }}
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ path('my_account_dashboard') }}">{{ 'app.ui.my_account'|trans }}</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{{ path('security_logout') }}">{{ 'app.ui.logout'|trans }}</a>
+                        <a class="dropdown-item" href="{{ path('user_index') }}">{{ 'app.ui.user'|trans }}</a>
+                        <a class="dropdown-item" href="#">{{ 'app.ui.post'|trans }}</a>
                     </div>
                 </li>
-            {% else %}
-                <li><a class="btn btn-light mr-2" href="{{ path('security_login') }}">{{ 'app.ui.login'|trans }}</a></li>
-                <li><a class="btn btn-dark mr-2" href="{{ path('security_register') }}">{{ 'app.ui.register'|trans }}</a></li>
-            {% endif %}
-            {% for locale in locales %}
-                {% if locale != app.request.locale %}
-                    <li><a class="btn btn-outline-primary" href="{{ path('change_locale', {'locale': locale}) }}">{{ locale }}</a></li>
+                {% if app.user %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ app.user.username }}
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ path('my_account_dashboard') }}">{{ 'app.ui.my_account'|trans }}</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{ path('security_logout') }}">{{ 'app.ui.logout'|trans }}</a>
+                        </div>
+                    </li>
+                {% else %}
+                    <li class="nav-item"><a class="nav-link" href="{{ path('security_login') }}">{{ 'app.ui.login'|trans }}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ path('security_register') }}">{{ 'app.ui.register'|trans }}</a></li>
                 {% endif %}
-            {% endfor %}
-        </ul>
+                {% for locale in locales %}
+                    {% if locale != app.request.locale %}
+                        <li class="nav-item"><a class="nav-link" href="{{ path('change_locale', {'locale': locale}) }}">
+                                {% if locale == "en" %}
+                                    <img class="img-fluid" src="{{ asset('img/united-kingdom.svg') }}" alt="" width="20" height="20">
+                                {% else %}
+                                    <img class="img-fluid" src="{{ asset('img/france.svg') }}" alt="" width="20" height="20">
+                                {% endif %}
+                            </a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
     </div>
 </nav>
