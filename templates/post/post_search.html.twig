@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'app.ui.post'|trans }}{% endblock %}
+
+{% block body %}
+    <div class="container mt-2">
+        <nav aria-label="breadcrumb" class="main-breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{ path('home') }}">{{ 'app.ui.home'|trans }}</a></li>
+                <li class="breadcrumb-item active" aria-current="page">{{ 'app.ui.post'|trans }}</li>
+            </ol>
+        </nav>
+        <div class="row justify-content-center">
+            <div class="col-sm-8 mt-3 mb-5">
+                {{ form_start(form) }}
+                <div class="input-group">
+                    {{ form_widget(form.title, {'attr': {'class': 'form-control', 'placeholder': ('app.ui.title'|trans)}}) }}
+                    <div class="input-group-append"><button type="submit" class="btn btn-primary"><i class="fas fa-search"></i></button></div>
+                </div>
+                <small id="searchHelp" class="form-text text-muted">{{ 'app.ui.number_result'|trans({'%number%': (posts | length)}) }}</small>
+                {{ form_end(form) }}
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            {% for post in posts %}
+                <div class="col-sm-6 col-md-4">
+                    <div class="card mt-2">
+                        <div class="card-body">
+                            <h4 class="card-title">{{ post.title }}</h4>
+                            <h6 class="card-subtitle mb-2 text-muted">{{ ('app.ui.'~post.language)|trans }}</h6>
+                            {#<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>#}
+                            <a href="{{ path('post_show', {'id' : post.id}) }}" class="card-link">{{ 'app.ui.read_more'|trans }}</a>
+                            <a href="#" class="card-link">Another link</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

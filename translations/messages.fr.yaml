@@ -50,6 +50,7 @@ app:
     python: Python
     read_more: Lire la suite
     register: Inscription
+    number_result: '%number% résultat(s)'
     save: Enregistrer
     search: Rechercher
     search_a_post: Rechercher une publication

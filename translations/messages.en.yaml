@@ -50,6 +50,7 @@ app:
     python: Python
     read_more: Read more
     register: Register
+    number_result: '%number% result(s)'
     save: Save
     search: Search
     search_a_post: Search a post

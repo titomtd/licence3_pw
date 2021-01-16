@@ -19,7 +19,7 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{ path('user_index') }}">{{ 'app.ui.user'|trans }}</a>
-                        <a class="dropdown-item" href="#">{{ 'app.ui.post'|trans }}</a>
+                        <a class="dropdown-item" href="{{ path('post_search') }}">{{ 'app.ui.post'|trans }}</a>
                     </div>
                 </li>
                 {% if app.user %}
