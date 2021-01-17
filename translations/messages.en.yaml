@@ -4,7 +4,9 @@ app:
     a_picture_exist: You already have a profile picture which you can download below.
     add_edit_post: Edit a post
     add_new_post: Add new post
+    age: '%age% years'
     all: All
+    birthday: Birthday
     by: by
     close: Close
     comment: Comment
@@ -14,6 +16,7 @@ app:
     dashboard: Dashboard
     disabled: Disabled
     download: Download
+    each_field: Each field must be between 4 and 30 characters.
     edit: Edit
     email: Mail adress
     filename: Filename
@@ -22,6 +25,7 @@ app:
     home: Home
     i_like: I like
     java: Java
+    job: Status
     language: Language
     leave_a_comment: Leave a comment
     login: Login
@@ -40,6 +44,7 @@ app:
     please_connect_to_leave_a_comment: Please login to be able to leave a comment
     please_connect_to_leave_a_like: Please login to be able to like this post
     post: Post
+    posts: Posts
     post_close: Close the post
     post_delete: Delete the post
     post_edit: Edit the post
@@ -53,8 +58,12 @@ app:
     number_result: '%number% result(s)'
     save: Save
     search: Search
+    searcher: Searcher
     search_a_post: Search a post
     shared_this_post: '%name% shared this post'
+    social: Social networks
+    student: Student
+    teacher: Teacher
     the_post_was_closed: "This post has been closed by the author of the post or a member of the team"
     this_website_was: "This website was developed within the framework of web programming in license 3 MIAGE at the University of Rennes 1. The goal of the project was to create a site using different web concepts: object-oriented programming, security, ajax ..."
     title: Title
@@ -64,4 +73,5 @@ app:
     username: Username
     view_profile: View profile
     warning: Warning !
+    website: Website
     website_developed_by: This website was developed by Gilles Bancel, Simon Beaussier and Thomas Duchemin

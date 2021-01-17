@@ -23,23 +23,45 @@
                 <div class="card-header">{{ 'app.ui.register'|trans }}</div>
                 <div class="card-body">
                     {{ form_start(form) }}
-                    <div class="form-group">
-                        {{ form_label(form.username, ('app.ui.username'|trans)) }}
-                        {{ form_errors(form.username) }}
-                        {{ form_widget(form.username, {'attr': {'class': 'form-control', 'placeholder': ('app.ui.username'|trans)}}) }}
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                {{ form_label(form.username, ('app.ui.username'|trans)) }}<small style="color: #e74c3c"> *</small>
+                                {{ form_errors(form.username) }}
+                                {{ form_widget(form.username, {'attr': {'class': 'form-control', 'placeholder': ('app.ui.username'|trans)}}) }}
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                {{ form_label(form.email, ('app.ui.email'|trans)) }}<small style="color: #e74c3c"> *</small>
+                                {{ form_errors(form.email) }}
+                                {{ form_widget(form.email, {'attr': {'class': 'form-control', 'placeholder': ('app.ui.email'|trans)}}) }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                {{ form_label(form.job, ('app.ui.job'|trans)) }}<small style="color: #e74c3c"> *</small>
+                                {{ form_errors(form.job) }}
+                                {{ form_widget(form.job, {'attr': {'class': 'form-control', 'placeholder': ('app.ui.job'|trans)}}) }}
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                {{ form_label(form.birthday, ('app.ui.birthday'|trans)) }}<small style="color: #e74c3c"> *</small>
+                                {{ form_errors(form.birthday) }}
+                                {{ form_widget(form.birthday, {'attr': {'class': 'form-control', 'placeholder': ('app.ui.birthday'|trans)}}) }}
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
-                        {{ form_label(form.email, ('app.ui.email'|trans)) }}
-                        {{ form_errors(form.email) }}
-                        {{ form_widget(form.email, {'attr': {'class': 'form-control', 'placeholder': ('app.ui.email'|trans)}}) }}
-                    </div>
-                    <div class="form-group">
-                        {{ form_label(form.password, ('app.ui.password'|trans)) }}
+                        {{ form_label(form.password, ('app.ui.password'|trans)) }}<small style="color: #e74c3c"> *</small>
                         {{ form_errors(form.password) }}
                         {{ form_widget(form.password, {'attr': {'class': 'form-control', 'placeholder': ('app.ui.password'|trans)}}) }}
                     </div>
                     <div class="form-group">
-                        {{ form_label(form.confirm_password, ('app.ui.confirm_password'|trans)) }}
+                        {{ form_label(form.confirm_password, ('app.ui.confirm_password'|trans)) }}<small style="color: #e74c3c"> *</small>
                         {{ form_errors(form.confirm_password) }}
                         {{ form_widget(form.confirm_password, {'attr': {'class': 'form-control', 'placeholder': ('app.ui.confirm_password'|trans)}}) }}
                     </div>

@@ -40,10 +40,10 @@
                             " alt="Admin" class="rounded-circle" width="150" height="150">
                             <div class="mt-3">
                                 <a style="font-size: 20px;" href="{{ path('user_show', {'id' : user.id}) }}">{{ user.username }}</a>
-                                <p class="text-secondary mb-1">Profession</p>
-                                <p class="text-muted font-size-sm">Ville</p>
-                                <button class="btn btn-primary">{{ 'app.ui.follow'|trans }}</button>
-                                <button class="btn btn-outline-primary">{{ 'app.ui.message'|trans }}</button>
+                                <p class="text-secondary mb-1">{{ ('app.ui.'~user.job)|trans }}</p>
+                                <p class="text-muted font-size-sm">{{ 'app.ui.age'|trans({'%age%': user.getAge}) }}</p>
+                                <button class="btn btn-primary disabled">{{ 'app.ui.follow'|trans }}</button>
+                                <button class="btn btn-outline-primary disabled">{{ 'app.ui.message'|trans }}</button>
                             </div>
                         </div>
                     </div>
