@@ -3,7 +3,11 @@
 namespace App\Form;
 
 use App\Entity\User;
+use App\Job;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -16,6 +20,16 @@ class RegistrationFormType extends AbstractType
         $builder
             ->add('email', EmailType::class)
             ->add('username')
+            ->add('job', ChoiceType::class, [
+                'choices' => [
+                    'Searcher' => Job::SEARCHER,
+                    'Student' => Job::STUDENT,
+                    'Teacher' => Job::TEACHER,
+                ],
+            ])
+            ->add('birthday', DateType::class, [
+                'widget' => 'single_text'
+            ])
             ->add('password', PasswordType::class)
             ->add('confirm_password', PasswordType::class)
         ;

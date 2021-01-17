@@ -49,6 +49,46 @@ class User implements UserInterface
     private $confirm_password;
 
     /**
+     * @ORM\Column(type="string")
+     */
+    private $job;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $birthday;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     * @Assert\Length(min=4, max=30, minMessage="Votre site web doit être compris entre 4 et 30 caractères")
+     */
+    private $website;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     * @Assert\Length(min=4, max=30, minMessage="Votre pseudo github doit être compris entre 4 et 30 caractères")
+     */
+    private $github;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     * @Assert\Length(min=4, max=30, minMessage="Votre pseudo twitter doit être compris entre 4 et 30 caractères")
+     */
+    private $twitter;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     * @Assert\Length(min=4, max=30, minMessage="Votre pseudo instagram doit être compris entre 4 et 30 caractères")
+     */
+    private $instagram;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     * @Assert\Length(min=4, max=30, minMessage="Votre nom Facebook doit être compris entre 4 et 30 caractères")
+     */
+    private $facebook;
+
+    /**
      * @ORM\OneToMany(targetEntity=Post::class, mappedBy="user")
      */
     private $posts;
@@ -213,5 +253,126 @@ class User implements UserInterface
     public function hasPicture(): ?bool
     {
         return $this->pictureFileName != null;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getJob()
+    {
+        return $this->job;
+    }
+
+    /**
+     * @param mixed $job
+     */
+    public function setJob($job): void
+    {
+        $this->job = $job;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBirthday()
+    {
+        return $this->birthday;
+    }
+
+    /**
+     * @param mixed $birthday
+     */
+    public function setBirthday($birthday): void
+    {
+        $this->birthday = $birthday;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getWebsite()
+    {
+        return $this->website;
+    }
+
+    /**
+     * @param mixed $website
+     */
+    public function setWebsite($website): void
+    {
+        $this->website = $website;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getGithub()
+    {
+        return $this->github;
+    }
+
+    /**
+     * @param mixed $github
+     */
+    public function setGithub($github): void
+    {
+        $this->github = $github;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTwitter()
+    {
+        return $this->twitter;
+    }
+
+    /**
+     * @param mixed $twitter
+     */
+    public function setTwitter($twitter): void
+    {
+        $this->twitter = $twitter;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getInstagram()
+    {
+        return $this->instagram;
+    }
+
+    /**
+     * @param mixed $instagram
+     */
+    public function setInstagram($instagram): void
+    {
+        $this->instagram = $instagram;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFacebook()
+    {
+        return $this->facebook;
+    }
+
+    /**
+     * @param mixed $facebook
+     */
+    public function setFacebook($facebook): void
+    {
+        $this->facebook = $facebook;
+    }
+
+    public function getAge()
+    {
+        $now = new \DateTime('now');
+        $age = $this->getBirthday();
+        $difference = $now->diff($age);
+
+        return $difference->format('%y');
     }
 }

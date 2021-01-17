@@ -24,7 +24,7 @@
                     <a class="flex-sm-fill text-sm-center nav-link" href="{{ path('my_account_dashboard') }}">{{ 'app.ui.dashboard'|trans }}</a>
                     <a class="flex-sm-fill text-sm-center nav-link active" href="{{ path('my_account_update_profile') }}">{{ 'app.ui.update_profile'|trans }}</a>
                     <a class="flex-sm-fill text-sm-center nav-link" href="{{ path('my_account_comments') }}">{{ 'app.ui.comments'|trans }}</a>
-                    <a class="flex-sm-fill text-sm-center nav-link" href="{{ path('my_account_update_password') }}">{{ 'app.ui.update_password'|trans }}</a>
+                    <a class="flex-sm-fill text-sm-center nav-link disabled" href="{{ path('my_account_update_password') }}">{{ 'app.ui.update_password'|trans }}</a>
                 </nav>
             </div>
         </div>
@@ -35,14 +35,90 @@
                     <div class="card-body">
                         {{ form_start(form) }}
                         <div class="form-group">
-                            {{ form_label(form.username, ('app.ui.username'|trans)) }}
+                            {{ form_label(form.username, ('app.ui.username'|trans)) }}<small style="color: #e74c3c"> *</small>
                             {{ form_errors(form.username) }}
                             {{ form_widget(form.username, {'attr': {'class': 'form-control'}}) }}
                         </div>
                         <div class="form-group">
-                            {{ form_label(form.email, ('app.ui.email'|trans)) }}
+                            {{ form_label(form.email, ('app.ui.email'|trans)) }}<small style="color: #e74c3c"> *</small>
                             {{ form_errors(form.email) }}
                             {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    {{ form_label(form.job, ('app.ui.job'|trans)) }}<small style="color: #e74c3c"> *</small>
+                                    {{ form_errors(form.job) }}
+                                    {{ form_widget(form.job, {'attr': {'class': 'form-control', 'placeholder': ('app.ui.job'|trans)}}) }}
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    {{ form_label(form.birthday, ('app.ui.birthday'|trans)) }}<small style="color: #e74c3c"> *</small>
+                                    {{ form_errors(form.birthday) }}
+                                    {{ form_widget(form.birthday, {'attr': {'class': 'form-control', 'placeholder': ('app.ui.birthday'|trans)}}) }}
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <h6>{{ 'app.ui.social'|trans }}</h6>
+                        <small class="form-text text-muted mb-3">{{ 'app.ui.each_field'|trans}}</small>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <div class="input-group mb-3">
+                                        {{ form_errors(form.website) }}
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fas fa-globe"></i></span>
+                                        </div>
+                                        {{ form_widget(form.website, {'attr': {'class': 'form-control', 'placeholder': ('app.ui.website'|trans)}}) }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <div class="input-group mb-3">
+                                        {{ form_errors(form.github) }}
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fab fa-github"></i></span>
+                                        </div>
+                                        {{ form_widget(form.github, {'attr': {'class': 'form-control', 'placeholder': 'Github'}}) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <div class="input-group mb-3">
+                                        {{ form_errors(form.twitter) }}
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fab fa-twitter" style="color: #00a8ff"></i></span>
+                                        </div>
+                                        {{ form_widget(form.twitter, {'attr': {'class': 'form-control', 'placeholder': 'Twitter'}}) }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <div class="input-group mb-3">
+                                        {{ form_errors(form.instagram) }}
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fab fa-instagram" style="color: #D980FA"></i></span>
+                                        </div>
+                                        {{ form_widget(form.instagram, {'attr': {'class': 'form-control', 'placeholder': 'Instagram'}}) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                {{ form_errors(form.facebook) }}
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fab fa-facebook" style="color: #1B9CFC"></i></span>
+                                </div>
+                                {{ form_widget(form.facebook, {'attr': {'class': 'form-control', 'placeholder': 'Facebook'}}) }}
+                            </div>
                         </div>
                         <hr>
                         {% if form.vars.value.hasPicture %}

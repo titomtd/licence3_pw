@@ -4,7 +4,9 @@ app:
     a_picture_exist: Vous possédez déjà une image de profil que vous pouvez télécharger ci-dessous.
     add_edit_post: Modifier une publication
     add_new_post: Ajouter une nouvelle publication
+    age: '%age% ans'
     all: Tout
+    birthday: Date de naissance
     by: par
     close: Fermer
     comment: Commenter
@@ -14,6 +16,7 @@ app:
     dashboard: Tableau de bord
     disabled: Désactivé
     download: Télécharger
+    each_field: Chaque champ doit être compris entre 4 et 30 caractères.
     edit: Editer
     email: Adresse mail
     filename: Nom du fichier
@@ -22,6 +25,7 @@ app:
     home: Accueil
     i_like: J'aime
     java: Java
+    job: Statut
     language: Langage
     leave_a_comment: Laisser un commentaire
     login: Connexion
@@ -40,6 +44,7 @@ app:
     please_connect_to_leave_a_comment: Veuillez vous connecter pour pouvoir laisser un commentaire
     please_connect_to_leave_a_like: Veuillez vous connecter pour pouvoir aimer cette publication
     post: Publication
+    posts: Publications
     post_close: Fermer la publication
     post_delete: Supprimer la publication
     post_edit: Modifier la publication
@@ -53,8 +58,12 @@ app:
     number_result: '%number% résultat(s)'
     save: Enregistrer
     search: Rechercher
+    searcher: Chercheur
     search_a_post: Rechercher une publication
     shared_this_post: '%name% a partagé cette publication'
+    social: Réseaux sociaux
+    student: Etudiant
+    teacher: Professeur
     the_post_was_closed: "Cette publication a été fermée par l'auteur de cette dernière ou un membre de l'équipe"
     this_website_was: "Ce site a été développé dans le cadre de la programmation web en licence 3 MIAGE à l'université de Rennes 1. Le projet avait pour but de créer un site utilisant les différents notions web: programmation orientée objet, sécurité, ajax..."
     title: Titre
@@ -64,4 +73,5 @@ app:
     username: Nom d'utilisateur
     view_profile: Voir le profil
     warning: Attention !
+    website: Site internet
     website_developed_by: Ce site a été développé par Gilles Bancel, Simon Beaussier et Thomas Duchemin
