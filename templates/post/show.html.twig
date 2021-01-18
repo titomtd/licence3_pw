@@ -38,7 +38,7 @@
             </h1>
             <p class="lead">
                 {{ 'app.ui.by'|trans }}
-                <a href="#">{{ post.user.username }}</a>
+                <a href="{{ path('user_show', { 'id' : post.user.id }) }}">{{ post.user.username }}</a>
             </p>
             <hr>
             <p>{{ post.createdAt | date }}</p>
