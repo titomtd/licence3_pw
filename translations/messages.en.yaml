@@ -6,8 +6,10 @@ app:
     add_new_post: Add new post
     age: '%age% years'
     all: All
+    ask_to_reset: Ask to reset your password by entering your email address.
     birthday: Birthday
     by: by
+    click_on_this_link: Click on this link to change your password.
     close: Close
     comment: Comment
     comments: Comments
@@ -19,10 +21,13 @@ app:
     each_field: Each field must be between 4 and 30 characters.
     edit: Edit
     email: Mail adress
+    email_no_exist: This email address does not have an account.
+    email_send: An email will be sent to you so that you can renew your password. The link you will receive will be valid for 10min.
     error_login: Incorrect email address or password.
     filename: Filename
     filter_by_language: Filter by language
     follow: Follow
+    hello: Hello
     home: Home
     i_like: I like
     java: Java
@@ -38,6 +43,8 @@ app:
     number_post: '%number% post(s)'
     oldPassword: Old password
     password: Password
+    password_forget: Forgot your password ?
+    password_has_been_reset: Your password has been reset.
     password_min: Your password must be at least 8 characters long.
     picture_file_name: Picture
     post_found: Result found
@@ -58,6 +65,7 @@ app:
     read_more: Read more
     register: Register
     register_success: Registration successful.
+    reset_password: Reset password
     number_result: '%number% result(s)'
     save: Save
     search: Search
@@ -66,6 +74,7 @@ app:
     shared_this_post: '%name% shared this post'
     social: Social networks
     student: Student
+    submit: Submit
     teacher: Teacher
     the_post_was_closed: "This post has been closed by the author of the post or a member of the team"
     this_website_was: "This website was developed within the framework of web programming in license 3 MIAGE at the University of Rennes 1. The goal of the project was to create a site using different web concepts: object-oriented programming, security, ajax ..."

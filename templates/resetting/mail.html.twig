@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Renouvellement du mot de passe</title>
+</head>
+<body>
+<p>
+    {{ 'app.ui.hello'|trans }} {{ user.username }}, <br>
+    {{ 'app.ui.click_on_this_link'|trans }}
+    <a class="btn btn-primary" href="{{ absolute_url(path('resetting', {'id': user.id, 'token': user.token})) }}">{{ 'app.ui.reset_password'|trans }}</a>
+</p>
+</body>
+</html>
