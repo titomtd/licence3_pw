@@ -73,15 +73,17 @@ class UserController extends AbstractController
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()) {
-            if($user->getPictureFilename() !=null) {
-                $file = $user->getPictureFilename();
-                $filename = md5(uniqid()) . '.' . $file->guessExtension();
-                $file->move($this->getParameter('upload_picture_directory'), $filename);
+            $imageFile = $form->get('pictureFileName')->getData();
+            if($imageFile) {
+                $filename = md5(uniqid()) . '.' . $imageFile->guessExtension();
+                $imageFile->move($this->getParameter('upload_picture_directory'), $filename);
                 $user->setPictureFilename($filename);
             }
 
             $manager->persist($user);
             $manager->flush();
+
+            $this->addFlash('success', 'app.ui.update_profile_success');
 
             return $this->redirectToRoute('my_account_update_profile');
         }

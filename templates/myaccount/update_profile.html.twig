@@ -2,6 +2,8 @@
 
 {% block title %}{{ 'app.ui.my_account'|trans }}{% endblock %}
 
+{% form_theme form 'form/form_errors.html.twig' %}
+
 {% block breadcrumb %}
 <div class="container mt-2">
     <div class="row">
@@ -33,6 +35,11 @@
                 <div class="card">
                     <div class="card-header">{{ 'app.ui.update_profile'|trans }}</div>
                     <div class="card-body">
+                        {% for message in app.flashes('success') %}
+                            <div class="alert alert-success">
+                                {{ message|trans }}
+                            </div>
+                        {% endfor %}
                         {{ form_start(form) }}
                         {{ form_errors(form.username) }}
                         {{ form_errors(form.email) }}

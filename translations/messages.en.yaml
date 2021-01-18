@@ -71,7 +71,9 @@ app:
     this_website_was: "This website was developed within the framework of web programming in license 3 MIAGE at the University of Rennes 1. The goal of the project was to create a site using different web concepts: object-oriented programming, security, ajax ..."
     title: Title
     update_password: Update password
+    update_post_success: Successful post update.
     update_profile: Update profile
+    update_profile_success: Profile update successful.
     user: User
     username: Username
     view_profile: View profile
