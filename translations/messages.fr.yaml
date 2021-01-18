@@ -71,7 +71,9 @@ app:
     this_website_was: "Ce site a été développé dans le cadre de la programmation web en licence 3 MIAGE à l'université de Rennes 1. Le projet avait pour but de créer un site utilisant les différents notions web: programmation orientée objet, sécurité, ajax..."
     title: Titre
     update_password: Changer de mot de passe
+    update_post_success: Mise à jour de la publication réussie.
     update_profile: Mettre à jour le profil
+    update_profile_success: Mise à jour du profil réussie.
     user: Utilisateur
     username: Nom d'utilisateur
     view_profile: Voir le profil

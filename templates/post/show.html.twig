@@ -11,6 +11,11 @@
                 <li class="breadcrumb-item"><a href="{{ path('post_search') }}">{{ 'app.ui.post'|trans }}</a></li>
                 <li class="breadcrumb-item active">{{ post.title }}</li>
             </ol>
+            {% for message in app.flashes('success') %}
+                <div class="alert alert-success">
+                    {{ message|trans }}
+                </div>
+            {% endfor %}
             {% if post.close %}
                 <div class="alert alert-success" role="alert">
                     {{ 'app.ui.post_solve'|trans }}

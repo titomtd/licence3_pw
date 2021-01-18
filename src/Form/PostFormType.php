@@ -11,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\File;
 
 class PostFormType extends AbstractType
 {
@@ -39,8 +40,13 @@ class PostFormType extends AbstractType
                 ],
             ])
             ->add('filename', FileType::class,  [
-                'data_class' => null,
+                'mapped' => false,
                 'required' => false,
+                'constraints' => [
+                    new File([
+                        'maxSize' => '1024k',
+                    ])
+                ],
             ])
         ;
     }

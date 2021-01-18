@@ -8,3 +8,4 @@ app:
     error_web: Your website must be between 4 and 30 characters long.
     password_confirm: Confirmation is different from password.
     password_size: Your password must be at least 8 characters long.
+    picture_error: The accepted image formats are png and jpeg. Your maximum file size should be 1 MB.

@@ -8,3 +8,4 @@ app:
     error_web: Votre site web doit être compris entre 4 et 30 caractères.
     password_confirm: La confirmation est différente du mot de passe.
     password_size: Votre mot de passe doit faire minimum 8 caractères.
+    picture_error: Les formats d'image acceptés sont png et jpeg. La taille de votre fichier maximal doit être de 1 Mo.
