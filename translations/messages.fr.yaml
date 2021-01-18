@@ -38,6 +38,7 @@ app:
     number_post: '%number% publication(s)'
     oldPassword: Ancien mot de passe
     password: Mot de passe
+    password_min: Votre mot de passe doit faire minimum 8 caractères.
     picture_file_name: Image
     post_found: Résultat trouvé
     posts_found: Résultats trouvés
@@ -56,6 +57,7 @@ app:
     python: Python
     read_more: Lire la suite
     register: Inscription
+    register_success: Inscription réussi.
     number_result: '%number% résultat(s)'
     save: Enregistrer
     search: Rechercher

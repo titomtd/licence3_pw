@@ -38,6 +38,7 @@ app:
     number_post: '%number% post(s)'
     oldPassword: Old password
     password: Password
+    password_min: Your password must be at least 8 characters long.
     picture_file_name: Picture
     post_found: Result found
     posts_found: Results found
@@ -56,6 +57,7 @@ app:
     python: Python
     read_more: Read more
     register: Register
+    register_success: Registration successful.
     number_result: '%number% result(s)'
     save: Save
     search: Search

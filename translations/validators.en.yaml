@@ -1,0 +1,10 @@
+app:
+  ui:
+    email_already: The email address is already in use.
+    error_facebook: Your facebook nickname must be between 4 and 30 characters long.
+    error_github: Your github nickname must be between 4 and 30 characters long.
+    error_instagram: Your instagram nickname must be between 4 and 30 characters long.
+    error_twitter: Your twitter nickname must be between 4 and 30 characters long.
+    error_web: Your website must be between 4 and 30 characters long.
+    password_confirm: Confirmation is different from password.
+    password_size: Your password must be at least 8 characters long.

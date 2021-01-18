@@ -34,28 +34,28 @@
                     <div class="card-header">{{ 'app.ui.update_profile'|trans }}</div>
                     <div class="card-body">
                         {{ form_start(form) }}
+                        {{ form_errors(form.username) }}
+                        {{ form_errors(form.email) }}
+                        {{ form_errors(form.job) }}
+                        {{ form_errors(form.birthday) }}
                         <div class="form-group">
                             {{ form_label(form.username, ('app.ui.username'|trans)) }}<small style="color: #e74c3c"> *</small>
-                            {{ form_errors(form.username) }}
                             {{ form_widget(form.username, {'attr': {'class': 'form-control'}}) }}
                         </div>
                         <div class="form-group">
                             {{ form_label(form.email, ('app.ui.email'|trans)) }}<small style="color: #e74c3c"> *</small>
-                            {{ form_errors(form.email) }}
                             {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
                         </div>
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     {{ form_label(form.job, ('app.ui.job'|trans)) }}<small style="color: #e74c3c"> *</small>
-                                    {{ form_errors(form.job) }}
                                     {{ form_widget(form.job, {'attr': {'class': 'form-control', 'placeholder': ('app.ui.job'|trans)}}) }}
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     {{ form_label(form.birthday, ('app.ui.birthday'|trans)) }}<small style="color: #e74c3c"> *</small>
-                                    {{ form_errors(form.birthday) }}
                                     {{ form_widget(form.birthday, {'attr': {'class': 'form-control', 'placeholder': ('app.ui.birthday'|trans)}}) }}
                                 </div>
                             </div>
@@ -63,11 +63,15 @@
                         <hr>
                         <h6>{{ 'app.ui.social'|trans }}</h6>
                         <small class="form-text text-muted mb-3">{{ 'app.ui.each_field'|trans}}</small>
+                        {{ form_errors(form.website) }}
+                        {{ form_errors(form.github) }}
+                        {{ form_errors(form.twitter) }}
+                        {{ form_errors(form.instagram) }}
+                        {{ form_errors(form.facebook) }}
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <div class="input-group mb-3">
-                                        {{ form_errors(form.website) }}
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-globe"></i></span>
                                         </div>
@@ -78,7 +82,6 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <div class="input-group mb-3">
-                                        {{ form_errors(form.github) }}
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fab fa-github"></i></span>
                                         </div>
@@ -91,7 +94,6 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <div class="input-group mb-3">
-                                        {{ form_errors(form.twitter) }}
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fab fa-twitter" style="color: #00a8ff"></i></span>
                                         </div>
@@ -102,7 +104,6 @@
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <div class="input-group mb-3">
-                                        {{ form_errors(form.instagram) }}
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fab fa-instagram" style="color: #D980FA"></i></span>
                                         </div>
@@ -113,7 +114,6 @@
                         </div>
                         <div class="form-group">
                             <div class="input-group mb-3">
-                                {{ form_errors(form.facebook) }}
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fab fa-facebook" style="color: #1B9CFC"></i></span>
                                 </div>
