@@ -1,0 +1,10 @@
+app:
+  ui:
+    email_already: L'adresse mail est déjà utilisé.
+    error_facebook: Votre pseudo facebook doit être compris entre 4 et 30 caractères.
+    error_github: Votre pseudo github doit être compris entre 4 et 30 caractères.
+    error_instagram: Votre pseudo instagram doit être compris entre 4 et 30 caractères.
+    error_twitter: Votre pseudo twitter doit être compris entre 4 et 30 caractères.
+    error_web: Votre site web doit être compris entre 4 et 30 caractères.
+    password_confirm: La confirmation est différente du mot de passe.
+    password_size: Votre mot de passe doit faire minimum 8 caractères.

@@ -14,7 +14,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  * @ORM\Entity(repositoryClass=UserRepository::class)
  * @UniqueEntity(
  *  fields = {"email"},
- *  message = "L'email est déjà utilisé"
+ *  message = "app.ui.email_already"
  * )
  */
 class User implements UserInterface
@@ -39,12 +39,12 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\Length(min="8", minMessage="Votre mot de passe doit faire minimum 8 caractères")
+     * @Assert\Length(min="8", minMessage="app.ui.password_size")
      */
     private $password;
 
     /**
-     * @Assert\EqualTo(propertyPath="password", message="La confirmation est différente du mot de passe")
+     * @Assert\EqualTo(propertyPath="password", message="app.ui.password_confirm")
      */
     private $confirm_password;
 
@@ -60,31 +60,31 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", nullable=true)
-     * @Assert\Length(min=4, max=30, minMessage="Votre site web doit être compris entre 4 et 30 caractères")
+     * @Assert\Length(min=4, max=30, minMessage="app.ui.error_web")
      */
     private $website;
 
     /**
      * @ORM\Column(type="string", nullable=true)
-     * @Assert\Length(min=4, max=30, minMessage="Votre pseudo github doit être compris entre 4 et 30 caractères")
+     * @Assert\Length(min=4, max=30, minMessage="app.ui.error_github")
      */
     private $github;
 
     /**
      * @ORM\Column(type="string", nullable=true)
-     * @Assert\Length(min=4, max=30, minMessage="Votre pseudo twitter doit être compris entre 4 et 30 caractères")
+     * @Assert\Length(min=4, max=30, minMessage="app.ui.error_twitter")
      */
     private $twitter;
 
     /**
      * @ORM\Column(type="string", nullable=true)
-     * @Assert\Length(min=4, max=30, minMessage="Votre pseudo instagram doit être compris entre 4 et 30 caractères")
+     * @Assert\Length(min=4, max=30, minMessage="app.ui.error_instagram")
      */
     private $instagram;
 
     /**
      * @ORM\Column(type="string", nullable=true)
-     * @Assert\Length(min=4, max=30, minMessage="Votre nom Facebook doit être compris entre 4 et 30 caractères")
+     * @Assert\Length(min=4, max=30, minMessage="app.ui.error_facebook")
      */
     private $facebook;
 

@@ -32,6 +32,8 @@ class SecurityController extends AbstractController
             $manager->persist($user);
             $manager->flush();
 
+            $this->addFlash('success', 'app.ui.register_success');
+
             return $this->redirectToRoute('security_login');
         }
 
