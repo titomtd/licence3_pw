@@ -19,6 +19,7 @@ app:
     each_field: Each field must be between 4 and 30 characters.
     edit: Edit
     email: Mail adress
+    error_login: Incorrect email address or password.
     filename: Filename
     filter_by_language: Filter by language
     follow: Follow

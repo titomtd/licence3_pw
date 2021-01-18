@@ -22,12 +22,19 @@
             <div class="card">
                 <div class="card-header">{{ 'app.ui.login'|trans }}</div>
                 <div class="card-body">
+                    {% if error %}
+                        <div class="alert alert-dismissible alert-primary">
+                            <p class="mb-0">{{ 'app.ui.error_login' | trans }}</p>
+                        </div>
+                    {% endif %}
                     <form action="{{ path('security_login') }}" method="post">
                         <div class="form-group">
-                            <input placeholder="{{ 'app.ui.email'|trans }}" required name="_username" type="text" class="form-control">
+                            <label for="InputEmail">{{ 'app.ui.email'|trans }}</label><small style="color: #e74c3c"> *</small>
+                            <input id="InputEmail" placeholder="{{ 'app.ui.email'|trans }}" required name="_username" type="text" class="form-control">
                         </div>
                         <div class="form-group">
-                            <input placeholder="{{ 'app.ui.password'|trans }}" required name="_password" type="password" class="form-control">
+                            <label for="InputPassword">{{ 'app.ui.password'|trans }}</label><small style="color: #e74c3c"> *</small>
+                            <input id="InputPassword" placeholder="{{ 'app.ui.password'|trans }}" required name="_password" type="password" class="form-control">
                         </div>
                         <div class="form-group">
                             <button type="submit" class="btn btn-success">{{ 'app.ui.login'|trans }}</button>

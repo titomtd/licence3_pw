@@ -20,9 +20,9 @@ class UserType extends AbstractType
             ->add('email')
             ->add('job', ChoiceType::class, [
                 'choices' => [
-                    'Searcher' => Job::SEARCHER,
-                    'Student' => Job::STUDENT,
-                    'Teacher' => Job::TEACHER,
+                    'app.ui.searcher' => Job::SEARCHER,
+                    'app.ui.student' => Job::STUDENT,
+                    'app.ui.teacher' => Job::TEACHER,
                 ],
             ])
             ->add('birthday', DateType::class, [

@@ -28,9 +28,7 @@
                         <div class="card-body">
                             <h4 class="card-title">{{ post.title }}</h4>
                             <h6 class="card-subtitle mb-2 text-muted">{{ ('app.ui.'~post.language)|trans }}</h6>
-                            {#<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>#}
                             <a href="{{ path('post_show', {'id' : post.id}) }}" class="card-link">{{ 'app.ui.read_more'|trans }}</a>
-                            <a href="#" class="card-link">Another link</a>
                         </div>
                     </div>
                 </div>

@@ -19,6 +19,7 @@ app:
     each_field: Chaque champ doit être compris entre 4 et 30 caractères.
     edit: Editer
     email: Adresse mail
+    error_login: Adresse mail ou mot de passe incorrect.
     filename: Nom du fichier
     filter_by_language: Filtrer par langage
     follow: Suivre
