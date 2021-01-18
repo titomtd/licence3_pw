@@ -6,8 +6,10 @@ app:
     add_new_post: Ajouter une nouvelle publication
     age: '%age% ans'
     all: Tout
+    ask_to_reset: Demandez à réinitialiser votre mot de passe en renseignant votre adresse mail.
     birthday: Date de naissance
     by: par
+    click_on_this_link: Cliquez sur ce lien pour changer votre mot de passe.
     close: Fermer
     comment: Commenter
     comments: Commentaires
@@ -19,10 +21,13 @@ app:
     each_field: Chaque champ doit être compris entre 4 et 30 caractères.
     edit: Editer
     email: Adresse mail
+    email_no_exist: Cette adresse mail ne possède pas de compte.
+    email_send: Un mail va vous être envoyé afin que vous puissiez renouveller votre mot de passe. Le lien que vous recevrez sera valide 10min.
     error_login: Adresse mail ou mot de passe incorrect.
     filename: Nom du fichier
     filter_by_language: Filtrer par langage
     follow: Suivre
+    hello: Bonjour
     home: Accueil
     i_like: J'aime
     java: Java
@@ -38,6 +43,8 @@ app:
     number_post: '%number% publication(s)'
     oldPassword: Ancien mot de passe
     password: Mot de passe
+    password_forget: Mot de passe oublié ?
+    password_has_been_reset: Votre mot de passe a été reinitialisé.
     password_min: Votre mot de passe doit faire minimum 8 caractères.
     picture_file_name: Image
     post_found: Résultat trouvé
@@ -58,6 +65,7 @@ app:
     read_more: Lire la suite
     register: Inscription
     register_success: Inscription réussi.
+    reset_password: Réinitialiser le mot de passe
     number_result: '%number% résultat(s)'
     save: Enregistrer
     search: Rechercher
@@ -66,6 +74,7 @@ app:
     shared_this_post: '%name% a partagé cette publication'
     social: Réseaux sociaux
     student: Etudiant
+    submit: Soumettre
     teacher: Professeur
     the_post_was_closed: "Cette publication a été fermée par l'auteur de cette dernière ou un membre de l'équipe"
     this_website_was: "Ce site a été développé dans le cadre de la programmation web en licence 3 MIAGE à l'université de Rennes 1. Le projet avait pour but de créer un site utilisant les différents notions web: programmation orientée objet, sécurité, ajax..."

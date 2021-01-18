@@ -41,7 +41,8 @@
                             <label for="InputPassword">{{ 'app.ui.password'|trans }}</label><small style="color: #e74c3c"> *</small>
                             <input id="InputPassword" placeholder="{{ 'app.ui.password'|trans }}" required name="_password" type="password" class="form-control">
                         </div>
-                        <div class="form-group">
+                        <a class="btn-link" href="{{ path('request_resetting') }}">{{ 'app.ui.password_forget'|trans }}</a>
+                        <div class="form-group mt-3">
                             <button type="submit" class="btn btn-success">{{ 'app.ui.login'|trans }}</button>
                         </div>
                     </form>

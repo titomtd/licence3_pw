@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'app.ui.reset_password'|trans }}{% endblock %}
+
+{% form_theme form 'form/form_errors.html.twig' %}
+
+{% block breadcrumb %}
+    <div class="container mt-2">
+        <div class="row">
+            <div class="col">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ path('home') }}">{{ 'app.ui.home'|trans }}</a></li>
+                    <li class="breadcrumb-item"><a href="{{ path('security_login') }}">{{ 'app.ui.login'|trans }}</a></li>
+                    <li class="breadcrumb-item active">{{ 'app.ui.reset_password'|trans }}</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block body %}
+<div class="container mt-2">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header">{{ 'app.ui.reset_password'|trans }}</div>
+                <div class="card-body">
+                    <div class="alert alert-info">
+                        {{ 'app.ui.ask_to_reset'|trans }}
+                    </div>
+                    {% for message in app.flashes('warning') %}
+                        <div class="alert alert-warning">
+                            {{ message|trans }}
+                        </div>
+                    {% endfor %}
+                    {{form_start(form)}}
+                    {{ form_errors(form.email) }}
+                        <div class="form-group">
+                            {{ form_label(form.email, ('app.ui.email'|trans)) }}<small style="color: #e74c3c"> *</small>
+                            {{ form_widget(form.email, {'attr': {'class': 'form-control', 'placeholder': ('app.ui.email'|trans)}}) }}
+                        </div>
+                        <div class="form-group mt-3">
+                            <button type="submit" class="btn btn-success">{{ 'app.ui.submit'|trans }}</button>
+                        </div>
+                    {{form_end(form)}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
